@@ -1,0 +1,14 @@
+.portfolio-cards-container {
+  display: flex;
+  flex-direction: row;
+
+  .card {
+    margin-right: 2rem;
+    max-width: 300px;
+    .card-image {
+      img {
+        max-width: 300px;
+      }
+    }
+  }
+}
