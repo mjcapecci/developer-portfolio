@@ -7,6 +7,32 @@
 
   .main-hero {
     margin-bottom: 7rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: -5px;
+      right: 130px;
+      height: 2rem;
+      width: 2rem;
+      background: #a2ded0;
+      z-index: -1;
+      transform: rotateZ(41deg);
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: -5px;
+      right: 130px;
+      height: 2rem;
+      width: 2rem;
+      background: #8fcabc;
+      z-index: -1;
+      transform: rotateZ(49deg);
+    }
   }
 
   p {
@@ -14,32 +40,112 @@
   }
 }
 
+.under-hero {
+  height: 100vh;
+  h1 {
+    margin-left: 1rem;
+  }
+}
+
 .benefit-cards-container {
   display: flex;
   flex-direction: column;
   .benefit-card {
+    position: relative;
     color: white;
     height: 12rem;
-    width: auto;
-    background: #333;
     margin: 1rem;
-    padding-bottom: 2rem;
-    box-shadow: 0px 5px 5px 1px #888;
-    border-radius: 5px;
+    cursor: pointer;
+    .the-card {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: all 0.5s ease;
+      .the-card-front {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        font-size: 24px;
+        background: #333;
+        border-radius: 5px;
+        box-shadow: 0px 5px 5px 1px #888;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: #111;
+        }
+      }
+
+      .the-card-back {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+        background: #555;
+        border-radius: 5px;
+        box-shadow: 0px 5px 5px 1px #888;
+      }
+    }
+
+    .the-card-active {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: all 0.5s ease;
+      transform: rotateY(180deg);
+
+      .the-card-front {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        font-size: 24px;
+        color: white;
+        background: #333;
+        border-radius: 5px;
+        box-shadow: 0px 5px 5px 1px #888;
+      }
+
+      .the-card-back {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+        background: #555;
+        border-radius: 5px;
+        box-shadow: 0px 5px 5px 1px #888;
+      }
+    }
+  }
+}
+
+.device-section {
+  .devices-image {
+    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    .card-text {
-      margin: 1rem;
-      font-size: 24px;
-      color: white;
-    }
-
-    .card-content {
-      position: absolute;
-    }
   }
 }
 
@@ -47,6 +153,10 @@
   .under-hero {
     font-size: 75%;
     text-align: center;
+
+    h1 {
+      margin-left: 0rem;
+    }
 
     .benefit-cards-container {
       width: auto;
@@ -64,5 +174,53 @@
         }
       }
     }
+  }
+
+  .device-section {
+    .devices-image {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 1rem;
+    }
+  }
+}
+
+// Hover Colors:
+
+.h-blue {
+  &:hover {
+    color: #5881bd;
+  }
+}
+
+.h-purple {
+  &:hover {
+    color: #e8618c;
+  }
+}
+
+.h-green {
+  &:hover {
+    color: #7cd1a9;
+  }
+}
+
+.h-yellow {
+  &:hover {
+    color: #ffe584;
+  }
+}
+
+.h-red {
+  &:hover {
+    color: #fe6253;
+  }
+}
+
+.h-orange {
+  &:hover {
+    color: #fdb876;
   }
 }

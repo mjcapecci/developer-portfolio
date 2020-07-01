@@ -9,34 +9,24 @@ import {
   faUserCheck,
 } from "@fortawesome/free-solid-svg-icons"
 
-import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion"
-
-function Content({ content }) {
-  return (
-    <motion.div animate>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-      >
-        {content}
-      </motion.span>
-    </motion.div>
-  )
-}
+import { motion } from "framer-motion"
 
 const UnderHeroItem = ({ icon, text, content, onClick, isOpen, color }) => {
   return (
     <>
       <motion.div animate onClick={onClick} class="column benefit-card">
         {" "}
-        <p className="card-text">{text}</p>
-        <FontAwesomeIcon icon={icon} size="3x" />
-      </motion.div>
-      <motion.div className="card-content">
-        <AnimatePresence>
-          {isOpen && <Content content={content} />}
-        </AnimatePresence>
+        <div className={isOpen ? "the-card-active" : "the-card"}>
+          <div className={`the-card-front ${color}`}>
+            <p>{text}</p>
+            <FontAwesomeIcon icon={icon} size="3x" />
+          </div>
+          <div className="the-card-back">
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+              {content}
+            </motion.p>
+          </div>
+        </div>
       </motion.div>
     </>
   )
@@ -48,45 +38,35 @@ const UnderHero = () => {
   return (
     <section className="under-hero">
       <h1>Our Top Priorities:</h1>
-      <div className="benefot-cards-container-container">
-        <div className="benefit-cards-container">
-          <AnimateSharedLayout>
-            <motion.div animate class="columns">
-              {itemCards.map(item => (
-                <UnderHeroItem
-                  icon={item.icon}
-                  text={item.text}
-                  content={item.content}
-                  isOpen={currentItem === item.text}
-                  onClick={() => {
-                    setCurrentItem(
-                      currentItem === item.text ? false : item.text
-                    )
-                  }}
-                />
-              ))}
-            </motion.div>
-          </AnimateSharedLayout>
-        </div>
-        <div className="benefit-cards-container">
-          <AnimateSharedLayout>
-            <motion.div animate class="columns">
-              {itemCardsBottom.map(item => (
-                <UnderHeroItem
-                  icon={item.icon}
-                  text={item.text}
-                  content={item.content}
-                  isOpen={currentItem === item.text}
-                  onClick={() => {
-                    setCurrentItem(
-                      currentItem === item.text ? false : item.text
-                    )
-                  }}
-                />
-              ))}
-            </motion.div>
-          </AnimateSharedLayout>
-        </div>
+      <div className="benefit-cards-container">
+        <motion.div animate class="columns">
+          {itemCards.map(item => (
+            <UnderHeroItem
+              icon={item.icon}
+              text={item.text}
+              content={item.content}
+              isOpen={currentItem === item.text}
+              color={item.color}
+              onClick={() => {
+                setCurrentItem(currentItem === item.text ? false : item.text)
+              }}
+            />
+          ))}
+        </motion.div>
+        <motion.div animate class="columns">
+          {itemCardsBottom.map(item => (
+            <UnderHeroItem
+              icon={item.icon}
+              text={item.text}
+              content={item.content}
+              isOpen={currentItem === item.text}
+              color={item.color}
+              onClick={() => {
+                setCurrentItem(currentItem === item.text ? false : item.text)
+              }}
+            />
+          ))}
+        </motion.div>
       </div>
     </section>
   )
@@ -96,17 +76,20 @@ const itemCards = [
   {
     icon: faLock,
     text: "Security",
-    content: "This is filler content for now.",
+    content: "The best way",
+    color: "h-blue",
   },
   {
     icon: faTachometerAlt,
     text: "Speed",
     content: "This is filler content for now.",
+    color: "h-red",
   },
   {
-    icon: faUserCheck,
+    icon: faChartLine,
     text: "SEO",
     content: "This is filler content for now.",
+    color: "h-orange",
   },
 ]
 
@@ -115,16 +98,19 @@ const itemCardsBottom = [
     icon: faDonate,
     text: "Cost",
     content: "This is filler content for now.",
+    color: "h-green",
   },
   {
     icon: faUniversalAccess,
     text: "Accessibility",
     content: "This is filler content for now.",
+    color: "h-yellow",
   },
   {
-    icon: faChartLine,
+    icon: faUserCheck,
     text: "Ease of Use",
     content: "This is filler content for now.",
+    color: "h-purple",
   },
 ]
 

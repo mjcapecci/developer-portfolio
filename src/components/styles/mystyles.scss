@@ -10,6 +10,7 @@ $family-sans-serif: "Jaldi", sans-serif;
 @import "landing";
 @import "navbar";
 @import "portfolio";
+@import "footer";
 
 html {
   font-size: 18px;
@@ -92,4 +93,12 @@ h6 {
   margin-left: 0;
   margin-right: 0;
   font-weight: bold;
+}
+
+.gatsby-color {
+  color: rebeccapurple;
+}
+
+.attention-color {
+  color: #e74c3c;
 }

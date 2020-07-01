@@ -5,12 +5,14 @@ import SEO from "../components/Default/seo"
 
 import MainHero from "../components/Landing/MainHero"
 import UnderHero from "../components/Landing/UnderHero"
+import DeviceSection from "../components/Landing/DeviceSection"
 
 const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
       <MainHero />
+      <DeviceSection />
       <UnderHero />
     </Layout>
   )
