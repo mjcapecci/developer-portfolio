@@ -1,0 +1,21 @@
+.device-section {
+  height: 100vh;
+  .devices-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .device-section {
+    .devices-image {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 1rem;
+    }
+  }
+}

@@ -22,7 +22,11 @@ const UnderHeroItem = ({ icon, text, content, onClick, isOpen, color }) => {
             <FontAwesomeIcon icon={icon} size="3x" />
           </div>
           <div className="the-card-back">
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            <motion.p
+              className="back-content"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
               {content}
             </motion.p>
           </div>
@@ -37,7 +41,7 @@ const UnderHero = () => {
 
   return (
     <section className="under-hero">
-      <h1>Our Top Priorities:</h1>
+      <h1>My Top Priorities:</h1>
       <div className="benefit-cards-container">
         <motion.div animate class="columns">
           {itemCards.map(item => (
@@ -82,7 +86,8 @@ const itemCards = [
   {
     icon: faTachometerAlt,
     text: "Speed",
-    content: "This is filler content for now.",
+    content:
+      "A FAST website leads to conversions. We offer speed with state-of-the-art tech.",
     color: "h-red",
   },
   {
@@ -97,7 +102,8 @@ const itemCardsBottom = [
   {
     icon: faDonate,
     text: "Cost",
-    content: "This is filler content for now.",
+    content:
+      "Server costs should be low. In many cases, we are able to host products for FREE on Netlify.",
     color: "h-green",
   },
   {

@@ -7,13 +7,20 @@ $title-font: "Anton", sans-serif;
 $family-sans-serif: "Jaldi", sans-serif;
 
 @import "~bulma/bulma.sass";
-@import "landing";
 @import "navbar";
+@import "landing";
+@import "benefit-cards";
+@import "service-cards";
+@import "description";
 @import "portfolio";
 @import "footer";
 
 html {
   font-size: 18px;
+}
+
+.main {
+  margin: 0 2rem;
 }
 
 blockquote {
@@ -95,10 +102,24 @@ h6 {
   font-weight: bold;
 }
 
+.text-center {
+  text-align: center;
+  font-size: 48px;
+}
+
 .gatsby-color {
   color: rebeccapurple;
 }
 
 .attention-color {
   color: #e74c3c;
+}
+
+.wp-block-social-links {
+  display: flex;
+
+  svg {
+    height: 40;
+    width: 40;
+  }
 }

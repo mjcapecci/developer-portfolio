@@ -2,10 +2,12 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/Default/layout"
+import SEO from "../components/Default/seo"
 
 const BlogDirectory = ({ pageContext }) => {
   return (
     <Layout>
+      <SEO title="Blog" />
       {pageContext.posts.map((post, i) => (
         <div className="card" key={i}>
           <h3

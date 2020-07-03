@@ -47,15 +47,25 @@ exports.createPages = async ({ graphql, actions }) => {
   const portfolioUnderContentTemplate = path.resolve(
     `./src/templates/portfolioUnderContent.js`
   )
+  const servicesUnderContentTemplate = path.resolve(
+    `./src/templates/servicesUnderContent.js`
+  )
   // The Page ID is prefixed with 'PAGE_'
   allWordpressPage.edges.forEach(edge => {
+    function templateType(edge) {
+      switch (edge.node.template) {
+        case "portfolio_under_content.php":
+          return portfolioUnderContentTemplate
+        case "services_under_contact.php":
+          return servicesUnderContentTemplate
+        default:
+          return pageTemplate
+      }
+    }
+
     createPage({
       path: edge.node.path,
-      component: slash(
-        edge.node.template === "portfolio_under_content.php"
-          ? portfolioUnderContentTemplate
-          : pageTemplate
-      ),
+      component: slash(templateType(edge)),
       context: {
         id: edge.node.id,
         status: edge.node.status,
