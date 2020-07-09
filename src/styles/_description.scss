@@ -9,14 +9,24 @@
   }
 }
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 1440px) {
   .device-section {
+    height: auto;
+    margin-bottom: 5rem;
     .devices-image {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       margin: 0 1rem;
+
+      p {
+        margin: 2rem 0;
+      }
+    }
+
+    .reverse-flex {
+      flex-direction: column-reverse;
     }
   }
 }

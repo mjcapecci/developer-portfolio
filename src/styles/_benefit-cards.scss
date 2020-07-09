@@ -8,97 +8,101 @@
 .benefit-cards-container {
   display: flex;
   flex-direction: column;
-  .benefit-card {
-    position: relative;
-    color: white;
-    height: 12rem;
-    margin: 1rem;
-    cursor: pointer;
-    .the-card {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      transform-style: preserve-3d;
-      transition: all 0.5s ease;
-      .the-card-front {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .benefit-card {
+      position: relative;
+      color: white;
+      height: 12rem;
+      margin: 1rem;
+      cursor: pointer;
+      .the-card {
         position: absolute;
         width: 100%;
         height: 100%;
-        backface-visibility: hidden;
-        font-size: 24px;
-        background: #333;
-        border-radius: 5px;
-        box-shadow: 0px 5px 5px 1px #888;
-        transition: all 0.2s ease;
+        transform-style: preserve-3d;
+        transition: all 0.5s ease;
+        .the-card-front {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          font-size: 24px;
+          background: #333;
+          border-radius: 5px;
+          box-shadow: 0px 5px 5px 1px #888;
+          transition: all 0.2s ease;
 
-        &:hover {
-          background: #111;
-          transform: translateY(2px);
+          &:hover {
+            background: #111;
+            transform: translateY(2px);
+          }
+        }
+
+        .the-card-back {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          transform: rotateY(180deg);
+          background: #555;
+          border-radius: 5px;
+          box-shadow: 0px 5px 5px 1px #888;
         }
       }
 
-      .the-card-back {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+      .the-card-active {
         position: absolute;
         width: 100%;
         height: 100%;
-        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        transition: all 0.5s ease;
         transform: rotateY(180deg);
-        background: #555;
-        border-radius: 5px;
-        box-shadow: 0px 5px 5px 1px #888;
-      }
-    }
 
-    .the-card-active {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      transform-style: preserve-3d;
-      transition: all 0.5s ease;
-      transform: rotateY(180deg);
+        .the-card-front {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          font-size: 24px;
+          color: white;
+          background: #333;
+          border-radius: 5px;
+          box-shadow: 0px 5px 5px 1px #888;
 
-      .the-card-front {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        font-size: 24px;
-        color: white;
-        background: #333;
-        border-radius: 5px;
-        box-shadow: 0px 5px 5px 1px #888;
-
-        &:hover {
-          background: #111;
-          transform: translateY(2px);
+          &:hover {
+            background: #111;
+            transform: translateY(2px);
+          }
         }
-      }
 
-      .the-card-back {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        transform: rotateY(180deg);
-        background: #555;
-        border-radius: 5px;
-        box-shadow: 0px 5px 5px 1px #888;
+        .the-card-back {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          transform: rotateY(180deg);
+          background: #555;
+          border-radius: 5px;
+          box-shadow: 0px 5px 5px 1px #888;
+        }
       }
     }
   }
@@ -108,28 +112,36 @@
   padding: 0 2rem;
 }
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 1017px) {
+  .benefit-cards-container {
+    height: auto;
+    .card-grid {
+      height: auto;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media only screen and (max-width: 681px) {
   .under-hero {
     font-size: 75%;
     text-align: center;
+    height: auto;
 
     h1 {
       margin-left: 0rem;
     }
 
     .benefit-cards-container {
-      width: auto;
-      flex-direction: row;
-      justify-content: center;
+      .card-grid {
+        height: auto;
+        grid-template-columns: repeat(1, 1fr);
 
-      .columns {
-        width: 100%;
-      }
-
-      .benefit-card {
-        width: auto;
-        .card-text {
-          font-size: 16px;
+        .benefit-card {
+          width: auto;
+          .card-text {
+            font-size: 16px;
+          }
         }
       }
     }

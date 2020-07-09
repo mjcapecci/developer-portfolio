@@ -14,7 +14,7 @@ import { motion } from "framer-motion"
 const UnderHeroItem = ({ icon, text, content, onClick, isOpen, color }) => {
   return (
     <>
-      <motion.div animate onClick={onClick} class="column benefit-card">
+      <motion.div animate onClick={onClick} class="benefit-card">
         {" "}
         <div className={isOpen ? "the-card-active" : "the-card"}>
           <div className={`the-card-front ${color}`}>
@@ -43,22 +43,8 @@ const UnderHero = () => {
     <section className="under-hero">
       <h1>My Top Priorities:</h1>
       <div className="benefit-cards-container">
-        <motion.div animate class="columns">
+        <motion.div animate class="card-grid">
           {itemCards.map(item => (
-            <UnderHeroItem
-              icon={item.icon}
-              text={item.text}
-              content={item.content}
-              isOpen={currentItem === item.text}
-              color={item.color}
-              onClick={() => {
-                setCurrentItem(currentItem === item.text ? false : item.text)
-              }}
-            />
-          ))}
-        </motion.div>
-        <motion.div animate class="columns">
-          {itemCardsBottom.map(item => (
             <UnderHeroItem
               icon={item.icon}
               text={item.text}
@@ -96,9 +82,6 @@ const itemCards = [
     content: "This is filler content for now.",
     color: "h-orange",
   },
-]
-
-const itemCardsBottom = [
   {
     icon: faDonate,
     text: "Cost",

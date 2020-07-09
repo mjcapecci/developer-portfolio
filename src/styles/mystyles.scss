@@ -24,6 +24,10 @@ html {
   font-size: 18px;
 }
 
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
 .main {
   margin: 0 2rem;
 }
