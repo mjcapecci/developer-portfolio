@@ -1,0 +1,24 @@
+.directory {
+  min-height: 75.2vh;
+  .blog-post-header {
+    padding: 1rem;
+    margin: 1rem 0;
+    .tags {
+      margin-bottom: 1rem;
+      .publish-date {
+        background: #333;
+        padding: 0rem 0.2rem;
+        border-radius: 5px;
+        color: white;
+        margin-right: 0.2rem;
+      }
+
+      .category {
+        background: #8fcabc;
+        padding: 0rem 0.2rem;
+        border-radius: 5px;
+        color: white;
+      }
+    }
+  }
+}

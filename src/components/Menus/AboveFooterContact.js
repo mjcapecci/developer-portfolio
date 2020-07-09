@@ -10,7 +10,9 @@ const AboveFooterContact = () => {
   return (
     <div
       className={
-        pathname === "/contact" ? "container full-height" : "container"
+        pathname === "/contact"
+          ? "container full-height above-footer"
+          : "container above-footer"
       }
     >
       <h3 className="attention-color text-center">Let's Get Started.</h3>
@@ -56,7 +58,7 @@ const AboveFooterContact = () => {
         <textarea
           name="message"
           class="textarea has-fixed-size is-primary"
-          placeholder="Fixed size textarea"
+          placeholder="Your message..."
         ></textarea>
         <p class="control submit-button">
           <a class="button is-primary">Submit</a>

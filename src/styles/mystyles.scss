@@ -13,7 +13,12 @@ $family-sans-serif: "Jaldi", sans-serif;
 @import "service-cards";
 @import "description";
 @import "portfolio";
+@import "contact";
+@import "blog-directory";
+@import "blog-post";
 @import "footer";
+
+@import "page-template";
 
 html {
   font-size: 18px;

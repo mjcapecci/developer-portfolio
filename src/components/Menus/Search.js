@@ -17,6 +17,9 @@ const Search = () => {
             title
             slug
             content
+            categories {
+              name
+            }
           }
         }
       }
@@ -27,10 +30,11 @@ const Search = () => {
     const query = e.target.value
     const posts = allWordpressPost.edges || []
     const filteredData = posts.filter(post => {
-      const { title, content } = post.node
+      const { title, content, categories } = post.node
       return (
         title.toLowerCase().includes(query.toLowerCase()) ||
-        content.toLowerCase().includes(query.toLowerCase())
+        content.toLowerCase().includes(query.toLowerCase()) ||
+        categories[0].name.toLowerCase().includes(query.toLowerCase())
       )
     })
     query.length > 0

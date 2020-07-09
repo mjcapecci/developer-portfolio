@@ -5,7 +5,6 @@ const ServiceCard = ({ service }) => {
   const cardList = service.acf.services_list_items
     ? service.acf.services_list_items.split(",")
     : null
-  console.log(cardList)
 
   return (
     <div class="column service-card">

@@ -30,6 +30,12 @@ exports.createPages = async ({ graphql, actions }) => {
             content
             excerpt
             template
+            categories {
+              name
+            }
+            featured_media {
+              source_url
+            }
           }
         }
       }
@@ -91,7 +97,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const postsPerPage = 2
+  const postsPerPage = 5
   const numberOfPages = Math.ceil(allWordpressPost.edges.length / postsPerPage)
 
   Array.from({ length: numberOfPages }).forEach((page, i) => {

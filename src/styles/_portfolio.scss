@@ -1,14 +1,60 @@
-.portfolio-cards-container {
-  display: flex;
-  flex-direction: row;
-
+.portfolio-container {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+  margin-top: 1.05rem;
   .card {
-    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 32rem;
     max-width: 300px;
+    border-radius: 5px;
+
     .card-image {
       img {
-        max-width: 300px;
+        max-width: 100%;
+        max-height: 202px;
+        min-height: 180px;
+        border-bottom: 2px solid #00d1b2;
+        border-radius: 5px 5px 0 0;
       }
     }
+    .card-content {
+      margin: 1rem;
+    }
+
+    .website-link {
+      width: 100%;
+      background: #00d1b2;
+      border-radius: 0 0 5px 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgb(255, 255, 255);
+      transition: all 0.1s ease;
+
+      &:hover {
+        background: #02c4a7;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1407px) {
+  .portfolio-container {
+    height: auto;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 703px) {
+  .portfolio-container {
+    height: auto;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
