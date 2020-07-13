@@ -67,39 +67,40 @@ const itemCards = [
   {
     icon: faLock,
     text: "Security",
-    content: "The best way",
+    content: "New development methods eliminate many common security risks.",
     color: "h-blue",
   },
   {
     icon: faTachometerAlt,
     text: "Speed",
     content:
-      "A FAST website leads to conversions. We offer speed with state-of-the-art tech.",
+      "A FAST website leads to conversions. I build fast products with state-of-the-art tech.",
     color: "h-red",
   },
   {
     icon: faChartLine,
     text: "SEO",
-    content: "This is filler content for now.",
+    content:
+      "Get found! Careful search engine optimization will put your name on your customers' screens.",
     color: "h-orange",
   },
   {
     icon: faDonate,
     text: "Cost",
     content:
-      "Server costs should be low. In many cases, we are able to host products for FREE on Netlify.",
+      "Server costs should be low. In many cases, I am able to host products for FREE on Netlify.",
     color: "h-green",
   },
   {
     icon: faUniversalAccess,
     text: "Accessibility",
-    content: "This is filler content for now.",
+    content: "A great product is accessible to everyone, everywhere.",
     color: "h-yellow",
   },
   {
     icon: faUserCheck,
     text: "Ease of Use",
-    content: "This is filler content for now.",
+    content: "A website must be easy to use to accomplish its goal.",
     color: "h-purple",
   },
 ]

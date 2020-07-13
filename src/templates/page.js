@@ -12,7 +12,10 @@ const Page = ({ pageContext }) => {
           className="page-title"
           dangerouslySetInnerHTML={{ __html: pageContext.title }}
         ></h1>
-        <div dangerouslySetInnerHTML={{ __html: pageContext.content }}></div>
+        <div
+          className="page-content"
+          dangerouslySetInnerHTML={{ __html: pageContext.content }}
+        ></div>
       </div>
     </Layout>
   )

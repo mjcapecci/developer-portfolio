@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 
+import lightLogo from "../../images/light-logo.png"
+import darkLogo from "../../images/dark-logo.png"
+
 import { useLocation } from "@reach/router"
 
 import { motion, AnimatePresence } from "framer-motion"
@@ -43,8 +46,8 @@ const MainMenu = () => {
         <div className="navbar-brand">
           <Link className="navbar-item" to="/">
             <img
-              src="https://versions.bulma.io/0.7.1/images/bulma-logo.png"
-              alt="Bulma: a modern CSS framework based on Flexbox"
+              src={path === "/" ? darkLogo : lightLogo}
+              alt="Michael Capecci: Full-stack Web Developer"
               width="112"
               height="28"
             />

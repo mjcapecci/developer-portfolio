@@ -7,7 +7,7 @@ const ServiceCard = ({ service }) => {
     : null
 
   return (
-    <div class="column service-card">
+    <div class="service-card">
       {" "}
       <div className={"the-card"}>
         <div className={`the-card-front`}>
@@ -61,11 +61,9 @@ const ServicesController = () => {
   return (
     <section className="services">
       <div className="services-cards-container">
-        <div animate class="columns">
-          {allWordpressWpServices.edges.map(item => (
-            <ServiceCard service={item.node} />
-          ))}
-        </div>
+        {allWordpressWpServices.edges.map(item => (
+          <ServiceCard service={item.node} />
+        ))}
       </div>
     </section>
   )

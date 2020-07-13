@@ -16,7 +16,7 @@
     h1 {
       text-align: center;
       font-size: 48px;
-      margin-bottom: 1rem;
+      margin: 0rem 1rem 1rem 1rem;
     }
 
     .byline {
@@ -48,8 +48,7 @@
     }
 
     .finale {
-      margin-top: 3rem;
-      margin-bottom: 3rem;
+      margin: 3rem 2rem;
       padding: 2rem;
       border-radius: 5px;
       background: #333;
@@ -62,11 +61,27 @@
   }
 }
 
+code {
+  font-size: 12px !important;
+
+  .number {
+    transform: translateY(12px) translateX(13px);
+    background: none;
+    font-size: 12px;
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   .post-container {
     .blog-post {
+      .blog-post-markup {
+        margin: 0 2rem;
+      }
       p {
         width: 100%;
+      }
+      .finale {
+        width: 90%;
       }
     }
   }
@@ -75,5 +90,15 @@
 @media only screen and (max-width: 1000px) {
   .finale {
     font-size: 19px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  code {
+    font-size: 9px !important;
+
+    .number {
+      font-size: 9px;
+    }
   }
 }
