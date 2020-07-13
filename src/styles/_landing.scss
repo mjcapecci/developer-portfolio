@@ -1,41 +1,50 @@
 .landing-top {
-  height: 90vh;
+  height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15)),
+    url("../images/heroBG.jpg") center no-repeat;
+  background-size: cover;
+
+  h1 {
+    color: white;
+  }
 
   .main-hero {
+    color: white;
     margin-bottom: 7rem;
     position: relative;
-
-    &::after {
-      content: "";
-      display: inline-block;
-      position: absolute;
-      top: -5px;
-      right: 130px;
-      height: 2rem;
-      width: 2rem;
-      background: #a2ded0;
-      z-index: -1;
-      transform: rotateZ(41deg);
-    }
-    &::before {
-      content: "";
-      display: inline-block;
-      position: absolute;
-      top: -5px;
-      right: 130px;
-      height: 2rem;
-      width: 2rem;
-      background: #8fcabc;
-      z-index: -1;
-      transform: rotateZ(49deg);
-    }
   }
 
   p {
     margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (min-height: 600px) {
+  .main-hero {
+    .title {
+      font-size: 80px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-hero {
+    .title {
+      font-size: 48px;
+    }
+  }
+}
+
+@media only screen and (max-width: 395px) {
+  .main-hero {
+    bottom: 3rem;
+    .title {
+      font-size: 42px;
+    }
   }
 }

@@ -8,9 +8,11 @@ const PortfolioUnderContent = ({ pageContext }) => {
   return (
     <Layout>
       <SEO title={pageContext.title} />
-      <h1 className="page-title">{pageContext.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: pageContext.content }}></div>
-      <PortfolioController />
+      <div className="container">
+        <h1 className="page-title">{pageContext.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: pageContext.content }}></div>
+        <PortfolioController />
+      </div>
     </Layout>
   )
 }

@@ -1,6 +1,9 @@
 .under-hero {
-  height: 100vh;
+  height: 75vh;
   h1 {
+    margin-left: 1rem;
+  }
+  .learnMore {
     margin-left: 1rem;
   }
 }
@@ -124,7 +127,7 @@
 
 @media only screen and (max-width: 681px) {
   .under-hero {
-    font-size: 75%;
+    font-size: 95%;
     text-align: center;
     height: auto;
 

@@ -42,6 +42,7 @@ const UnderHero = () => {
   return (
     <section className="under-hero">
       <h1>My Top Priorities:</h1>
+      <p className="learnMore">(Click cards to learn more)</p>
       <div className="benefit-cards-container">
         <motion.div animate class="card-grid">
           {itemCards.map(item => (

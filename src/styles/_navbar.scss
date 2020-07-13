@@ -1,6 +1,15 @@
 .navbar {
   font-size: 22px;
   justify-content: space-between;
+  position: absolute;
+  top: 0px;
+  background: none;
+}
+
+.burger-white {
+  span {
+    color: white;
+  }
 }
 
 .navbar-brand {
@@ -24,6 +33,9 @@
       background: rgb(214, 214, 214);
     }
   }
+  .item-white {
+    color: white;
+  }
   .no-hover {
     &:hover {
       background: none;
@@ -36,14 +48,15 @@
 }
 
 .search-results {
-  background: #999;
+  background: rgb(199, 199, 199);
   position: absolute;
-  top: 40px;
+  top: 45px;
   z-index: 1;
 
   .search-result-item {
-    padding: 2rem;
-    border-bottom: 1px solid white;
+    padding: 1rem;
+    border-bottom: 1px solid #555;
+    border-top: 1px solid #555;
   }
 }
 
@@ -51,6 +64,12 @@
   .navbar {
     .navbar-end {
       display: none;
+    }
+    .search-results {
+      background: rgb(199, 199, 199);
+      position: absolute;
+      top: 268px;
+      z-index: 1;
     }
   }
 }

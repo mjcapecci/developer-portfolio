@@ -37,7 +37,9 @@ const ServiceCard = ({ service }) => {
 const ServicesController = () => {
   const { allWordpressWpServices } = useStaticQuery(graphql`
     query {
-      allWordpressWpServices {
+      allWordpressWpServices(
+        sort: { order: ASC, fields: acf___post_sort_anchor }
+      ) {
         edges {
           node {
             title
@@ -45,6 +47,7 @@ const ServicesController = () => {
             excerpt
             acf {
               services_list_items
+              post_sort_anchor
             }
             featured_media {
               source_url

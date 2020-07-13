@@ -7,9 +7,11 @@ import ServicesController from "../components/Services/ServicesController"
 const ServicesUnderContent = ({ pageContext }) => {
   return (
     <Layout>
-      <SEO title={pageContext.title} />
-      <h1 className="page-title">{pageContext.title}</h1>
-      <ServicesController />
+      <div className="container">
+        <SEO title={pageContext.title} />
+        <h1 className="page-title">{pageContext.title}</h1>
+        <ServicesController />
+      </div>
     </Layout>
   )
 }

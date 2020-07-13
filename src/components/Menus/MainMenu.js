@@ -1,11 +1,25 @@
 import React, { useState, useEffect } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 
+import { useLocation } from "@reach/router"
+
 import { motion, AnimatePresence } from "framer-motion"
 
 import Search from "./Search"
 
 const MainMenu = () => {
+  const path = useLocation().pathname
+  const burger = document.getElementsByClassName("navbar-burger")
+
+  useEffect(() => {
+    if (path === "/") {
+      burger[0].classList.add("burger-white")
+      return
+    } else {
+      burger[0].classList.remove("burger-white")
+    }
+  })
+
   const [isToggled, setToggle] = useState(false)
 
   const { allWordpressWpApiMenusMenusItems } = useStaticQuery(graphql`
@@ -75,7 +89,12 @@ const MainMenu = () => {
             <Search></Search>
           </div>
           {allWordpressWpApiMenusMenusItems.edges[0].node.items.map(navItem => (
-            <Link className="navbar-item" to={"/" + navItem.object_slug}>
+            <Link
+              className={
+                path === "/" ? "navbar-item item-white" : "navbar-item"
+              }
+              to={"/" + navItem.object_slug}
+            >
               {navItem.title}
             </Link>
           ))}

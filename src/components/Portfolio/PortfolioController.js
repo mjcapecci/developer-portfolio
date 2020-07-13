@@ -4,7 +4,9 @@ import { graphql, useStaticQuery } from "gatsby"
 const PortfolioController = () => {
   const { allWordpressWpPortfolio } = useStaticQuery(graphql`
     query {
-      allWordpressWpPortfolio {
+      allWordpressWpPortfolio(
+        sort: { order: ASC, fields: acf___post_sort_anchor }
+      ) {
         edges {
           node {
             title
@@ -15,6 +17,7 @@ const PortfolioController = () => {
             }
             acf {
               portfolio_url
+              post_sort_anchor
             }
           }
         }

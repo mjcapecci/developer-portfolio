@@ -12,8 +12,10 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <MainHero />
-      <DeviceSection />
-      <UnderHero />
+      <div className="container">
+        <DeviceSection />
+        <UnderHero />
+      </div>
     </Layout>
   )
 }
