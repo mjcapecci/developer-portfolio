@@ -10,13 +10,16 @@ const DeviceSection = () => {
   const [init, setInit] = useState(false)
 
   useEffect(() => {
-    setInit(true)
+    setTimeout(() => {
+      setInit(true)
+      console.log("Hello")
+    }, 400)
   }, [])
 
   return (
     <section className="device-section container">
       <div className="devices-image">
-        <DeviceImage width={width / 2}></DeviceImage>
+        <DeviceImage width={init && width / 2}></DeviceImage>
         <p>
           My goal is to make products that are accessible to everyone,
           everywhere. Using{" "}
@@ -35,7 +38,7 @@ const DeviceSection = () => {
           And I won't stop until the mission is complete. My products are
           developed with an SEO-first, conversion-driven mentality.
         </p>
-        <GrowthImage width={width / 2}></GrowthImage>
+        <GrowthImage width={init && width / 2}></GrowthImage>
       </div>
     </section>
   )
