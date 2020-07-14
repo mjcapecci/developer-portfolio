@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import DeviceImage from "../ImagesPreload/devices"
 import GrowthImage from "../ImagesPreload/growth"
 
@@ -6,6 +6,12 @@ import useWindowSize from "../../utils/useWindowSize"
 
 const DeviceSection = () => {
   const width = useWindowSize().width
+
+  const [init, setInit] = useState(false)
+
+  useEffect(() => {
+    setInit(true)
+  }, [])
 
   return (
     <section className="device-section container">
