@@ -74,11 +74,13 @@ const AboveFooterContact = () => {
             placeholder="Your message..."
           ></textarea>
           <p className="control submit-button">
-            <input
+            <button
               className="button is-primary special"
               type="submit"
               value="Submit"
-            />
+            >
+              Submit
+            </button>
           </p>
         </div>
       </form>

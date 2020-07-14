@@ -1,8 +1,8 @@
 .device-section {
   font-size: 22px;
   height: 90vh;
+  min-width: 100%;
   .devices-image {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;

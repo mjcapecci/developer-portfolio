@@ -26,13 +26,12 @@
 }
 
 .thanks {
-  background: #5c837e;
+  background: #dce4e3;
 
-  .return-home {
-    color: rgb(189, 189, 255);
-
-    &:hover {
-      color: rgb(161, 161, 255);
+  .darker {
+    color: #222;
+    h1 {
+      color: #222;
     }
   }
 }

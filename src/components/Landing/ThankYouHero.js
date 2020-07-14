@@ -6,8 +6,10 @@ const ThankYouHero = () => {
   return (
     <section className="landing-top thanks">
       <div className="main-hero">
-        <h1 className="title is-1">THANK YOU</h1>
-        <p>I'm looking forward to speaking with you soon!</p>
+        <div className="darker">
+          <h1 className="title is-1">THANK YOU</h1>
+          <p>I'm looking forward to speaking with you soon!</p>
+        </div>
         <Link className="return-home" to="/">
           Go Back to Home
         </Link>
