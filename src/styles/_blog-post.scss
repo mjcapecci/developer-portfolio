@@ -17,6 +17,7 @@
       text-align: center;
       font-size: 48px;
       margin: 0rem 1rem 1rem 1rem;
+      text-decoration: underline;
     }
 
     .byline {
@@ -51,23 +52,33 @@
       margin: 3rem 2rem;
       padding: 2rem;
       border-radius: 5px;
-      background: #333;
-      color: white;
+      border: 2px solid #e84c3c;
+      background: none;
+      color: #222232;
     }
 
     .email {
-      color: #00d1b2;
+      color: #e84c3c;
     }
   }
 }
 
-code {
-  font-size: 12px !important;
+.code-container {
+  overflow-x: hidden;
+  width: 100% !important;
 
-  .number {
-    transform: translateY(12px) translateX(13px);
-    background: none;
-    font-size: 12px;
+  .code-toolbar {
+    .toolbar {
+      .toolbar-item {
+        display: none !important;
+      }
+    }
+  }
+
+  pre {
+    position: static;
+    overflow-x: scroll !important;
+    font-size: 16.7px !important;
   }
 }
 
@@ -91,14 +102,14 @@ code {
   .finale {
     font-size: 19px;
   }
-}
 
-@media only screen and (max-width: 680px) {
-  code {
-    font-size: 9px !important;
-
-    .number {
-      font-size: 9px;
-    }
+  .blog-post-markup {
+    width: 90%;
   }
 }
+
+// @media only screen and (max-width: 680px) {
+//   .code-container {
+//     width: 75%;
+//   }
+// }

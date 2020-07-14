@@ -5,7 +5,7 @@
       "prismjs",
       {
         "languages": ["javascript", "css", "markup"],
-        "plugins": ["show-language"],
+        "plugins": ["show-language", "custom-class"],
         "theme": "okaidia",
         "css": true
       }

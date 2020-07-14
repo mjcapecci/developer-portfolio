@@ -6,6 +6,9 @@ import Prism from "prismjs"
 
 const Post = ({ pageContext }) => {
   useEffect(() => {
+    Prism.plugins.customClass.map({
+      number: "prism-number",
+    })
     Prism.highlightAll()
   })
 

@@ -1,9 +1,7 @@
 @charset "utf-8";
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jaldi&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 $title-line-height: 0.8;
-$title-font: "Anton", sans-serif;
 $family-sans-serif: "Jaldi", sans-serif;
 
 @import "~bulma/bulma.sass";
@@ -22,10 +20,6 @@ $family-sans-serif: "Jaldi", sans-serif;
 
 html {
   font-size: 18px;
-}
-
-body {
-  -webkit-overflow-scrolling: touch;
 }
 
 .container {
@@ -59,6 +53,7 @@ h1 {
   margin-left: 0;
   margin-right: 0;
   font-weight: bold;
+  font-family: "Poppins", sans-serif;
 }
 
 h2 {
@@ -69,6 +64,7 @@ h2 {
   margin-left: 0;
   margin-right: 0;
   font-weight: bold;
+  font-family: "Poppins", sans-serif;
 }
 
 h3 {
@@ -79,6 +75,7 @@ h3 {
   margin-left: 0;
   margin-right: 0;
   font-weight: bold;
+  font-family: "Poppins", sans-serif;
 }
 
 h4 {

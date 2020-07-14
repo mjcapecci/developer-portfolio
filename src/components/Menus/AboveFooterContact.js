@@ -21,49 +21,67 @@ const AboveFooterContact = () => {
         <strong className="attention-color">within 24 hours</strong>) to start
         discussing your project.
       </p>
-      <div class="field columns">
-        <div class="control column">
-          <label htmlFor="name">Name:</label>
-          <input
-            class="input is-primary"
-            name="name"
-            type="text"
-            required
-            placeholder="Your name..."
-          />
+      <form
+        name="contact"
+        method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        action="/success"
+      >
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="contact" value="contact" />
+        <div className="field columns">
+          <div className="control column">
+            <label htmlFor="name">Name:</label>
+            <input
+              className="input is-primary"
+              name="name"
+              id="name"
+              type="text"
+              required
+              placeholder="Your name..."
+            />
+          </div>
+          <div className="control column">
+            <label htmlFor="name">Email:</label>
+            <input
+              className="input is-primary"
+              name="email"
+              id="email"
+              type="email"
+              required
+              placeholder="Your email..."
+            />
+          </div>
+          <div className="control column">
+            <label htmlFor="phone">Phone #:</label>
+            <input
+              name="phone"
+              id="phone"
+              className="input is-primary"
+              type="phone"
+              placeholder="Your phone # (optional)..."
+            />
+          </div>
         </div>
-        <div class="control column">
-          <label htmlFor="name">Email:</label>
-          <input
-            class="input is-primary"
-            name="email"
-            type="email"
-            required
-            placeholder="Your email..."
-          />
-        </div>
-        <div class="control column">
-          <label htmlFor="phone">Phone #:</label>
-          <input
-            name="phone"
-            class="input is-primary"
-            type="phone"
-            placeholder="Your phone # (optional)..."
-          />
-        </div>
-      </div>
 
-      <div class="control">
-        <label htmlFor="message">Message:</label>
-        <textarea
-          name="message"
-          class="textarea has-fixed-size is-primary"
-          placeholder="Your message..."
-        ></textarea>
-        <p class="control submit-button">
-          <a class="button is-primary">Submit</a>
-        </p>
-      </div>
+        <div className="control">
+          <label htmlFor="message">Message:</label>
+          <textarea
+            name="message"
+            id="message"
+            className="textarea has-fixed-size is-primary"
+            placeholder="Your message..."
+          ></textarea>
+          <p className="control submit-button">
+            <input
+              className="button is-primary special"
+              type="submit"
+              value="Submit"
+            />
+          </p>
+        </div>
+      </form>
     </div>
   )
 }

@@ -12,10 +12,11 @@ import Search from "./Search"
 
 const MainMenu = () => {
   const path = useLocation().pathname
+
   const burger = document.getElementsByClassName("navbar-burger")
 
   useEffect(() => {
-    if (path === "/") {
+    if (path === "/" || path === "/success") {
       burger[0].classList.add("burger-white")
       return
     } else {
@@ -46,7 +47,7 @@ const MainMenu = () => {
         <div className="navbar-brand">
           <Link className="navbar-item" to="/">
             <img
-              src={path === "/" ? darkLogo : lightLogo}
+              src={path === "/" || path === "/success" ? darkLogo : lightLogo}
               alt="Michael Capecci: Full-stack Web Developer"
               width="112"
               height="28"
@@ -94,7 +95,9 @@ const MainMenu = () => {
           {allWordpressWpApiMenusMenusItems.edges[0].node.items.map(navItem => (
             <Link
               className={
-                path === "/" ? "navbar-item item-white" : "navbar-item"
+                path === "/" || path === "/success"
+                  ? "navbar-item item-white"
+                  : "navbar-item"
               }
               to={"/" + navItem.object_slug}
             >
