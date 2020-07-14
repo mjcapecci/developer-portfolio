@@ -13,18 +13,18 @@ import Search from "./Search"
 const MainMenu = () => {
   const path = useLocation().pathname
 
-  const burger = document && document.getElementsByClassName("navbar-burger")
+  let burger = null
+
+  if (typeof window !== "undefined") {
+    burger = document.getElementsByClassName("navbar-burger")
+  }
 
   useEffect(() => {
-    if (burger) {
-      if (path === "/" || path === "/success") {
-        burger[0].classList.add("burger-white")
-        return
-      } else {
-        burger[0].classList.remove("burger-white")
-      }
-    } else {
+    if (path === "/" || path === "/success") {
+      burger[0].classList.add("burger-white")
       return
+    } else {
+      burger[0].classList.remove("burger-white")
     }
   })
 
