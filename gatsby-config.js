@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Michael Capecci`,
-    description: `Web & mobile development studio in the Chicagoland area. Get in touch to start planning out your next project.`,
+    description: `Michael Capecci is a Freelance Web Developer from the Chicagoland area. Get in touch to start planning out your next project.`,
     author: `Michael Capecci`,
   },
   plugins: [
@@ -87,6 +87,15 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "UA-172742172-1",
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
