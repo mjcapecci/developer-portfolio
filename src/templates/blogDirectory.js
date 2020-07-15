@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import moment from "moment"
 import { Link } from "gatsby"
 
@@ -11,7 +11,7 @@ const BlogDirectory = ({ pageContext }) => {
   useEffect(() => {
     setTimeout(() => {
       setInit(true)
-    }, 400)
+    }, 100)
   }, [])
 
   return (
@@ -50,7 +50,9 @@ const BlogDirectory = ({ pageContext }) => {
                 </div>
               </div>
               <p
-                dangerouslySetInnerHTML={init && { __html: post.node.excerpt }}
+                dangerouslySetInnerHTML={
+                  init ? { __html: post.node.excerpt } : { __html: "" }
+                }
               ></p>
               <Link to={"/post/" + post.node.slug}>Read More</Link>
             </div>
