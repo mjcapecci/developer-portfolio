@@ -9,6 +9,14 @@ module.exports = {
     author: `Michael Capecci`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-172742172-1",
+        head: true,
+        anonymize: true,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
@@ -87,15 +95,6 @@ module.exports = {
             },
           },
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: "UA-172742172-1",
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
