@@ -25,7 +25,7 @@ const Post = ({ pageContext }) => {
               dangerouslySetInnerHTML={{ __html: pageContext.title }}
             ></h1>
             <small className="byline">By: Michael Capecci</small>
-            <small className="byline">
+            <small className="byline byline-under">
               {readingTime(pageContext.content).text}
             </small>
             <div
