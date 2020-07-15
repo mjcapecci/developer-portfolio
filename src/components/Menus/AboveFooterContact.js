@@ -23,11 +23,12 @@ const AboveFooterContact = () => {
       </p>
       <form
         name="contact"
-        method="post"
+        method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        // action="/success"
+        action="/success"
       >
+        <input type="hidden" name="form-name" value="Contact Form" />
         <div className="field columns">
           <div className="control column">
             <label htmlFor="name">Name:</label>
