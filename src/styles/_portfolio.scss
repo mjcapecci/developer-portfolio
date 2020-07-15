@@ -59,3 +59,9 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+@media only screen and (max-width: 414px) {
+  .portfolio-container {
+    margin: 1.5rem auto;
+  }
+}

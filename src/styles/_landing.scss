@@ -42,6 +42,15 @@
   }
 }
 
+@media only screen and (max-height: 525px) {
+  .landing-top {
+    height: 100vh;
+    .main-hero {
+      margin-bottom: 0rem;
+    }
+  }
+}
+
 @media only screen and (min-height: 600px) {
   .main-hero {
     .title {

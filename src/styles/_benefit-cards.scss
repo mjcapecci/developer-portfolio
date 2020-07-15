@@ -119,11 +119,31 @@
   .under-hero {
     height: auto;
   }
+  .benefit-cards-container {
+    height: auto;
+    .card-grid {
+      height: auto;
+    }
+  }
 }
 
 @media only screen and (max-width: 1017px) {
   .under-hero {
     height: 100vh;
+  }
+
+  .benefit-cards-container {
+    height: auto;
+    .card-grid {
+      height: auto;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media only screen and (max-height: 859px) {
+  .under-hero {
+    height: auto;
   }
 
   .benefit-cards-container {
