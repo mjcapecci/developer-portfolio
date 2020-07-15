@@ -2,8 +2,6 @@ import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import SearchResultItem from "./SearchResultItem"
 
-import { AllHtmlEntities } from "html-entities"
-
 const Search = () => {
   const emptyQuery = ""
   const [state, setState] = useState({
@@ -62,7 +60,7 @@ const Search = () => {
         ></input>
         <ul className="search-results">
           {state.filteredData.map(result => (
-            <SearchResultItem data={AllHtmlEntities.decode(result)} />
+            <SearchResultItem data={result} />
           ))}
         </ul>
       </div>
