@@ -21,14 +21,8 @@ const AboveFooterContact = () => {
         <strong className="attention-color">within 24 hours</strong>) to start
         discussing your project.
       </p>
-      <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        action="/success"
-      >
-        <input type="hidden" name="form-name" value="Contact Form" />
+      <form name="contact" method="POST" data-netlify="true" action="/success">
+        <input type="hidden" name="contact" value="contact" />
         <div className="field columns">
           <div className="control column">
             <label htmlFor="name">Name:</label>
