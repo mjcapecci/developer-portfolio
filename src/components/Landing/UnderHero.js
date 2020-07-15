@@ -26,9 +26,8 @@ const UnderHeroItem = ({ icon, text, content, onClick, isOpen, color }) => {
               className="back-content"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-            >
-              {content}
-            </motion.p>
+              dangerouslySetInnerHTML={{ __html: content }}
+            ></motion.p>
           </div>
         </div>
       </motion.div>
@@ -67,7 +66,8 @@ const itemCards = [
   {
     icon: faLock,
     text: "Security",
-    content: "New development methods eliminate many common security risks.",
+    content:
+      "New development methods eliminate many common security risks. <a href='post/whats-so-good-about-static-site-generators' class='light-link'>Learn More</a>",
     color: "h-blue",
   },
   {
