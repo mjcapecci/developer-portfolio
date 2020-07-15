@@ -18,6 +18,7 @@ const Image = ({ width }) => {
     <Img
       fluid={data.placeholderImage.childImageSharp.fluid}
       style={{ width: width }}
+      alt="Michael Capecci's responsive websites on screens of varying sizes."
     />
   )
 }

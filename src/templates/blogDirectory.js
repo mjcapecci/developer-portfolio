@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 import moment from "moment"
 import { Link } from "gatsby"
 
+import { AllHtmlEntities } from "html-entities"
+
 import Layout from "../components/Default/layout"
 import SEO from "../components/Default/seo"
 
@@ -28,7 +30,9 @@ const BlogDirectory = ({ pageContext }) => {
                       ? post.node.featured_media.source_url
                       : ""
                   }
-                  alt={post.node.title}
+                  alt={AllHtmlEntities.decode(
+                    post.node.featured_media.alt_text
+                  )}
                 ></img>
                 <h3
                   dangerouslySetInnerHTML={{ __html: post.node.title }}

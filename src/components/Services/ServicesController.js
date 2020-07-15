@@ -14,7 +14,7 @@ const ServiceCard = ({ service }) => {
           <h2 dangerouslySetInnerHTML={{ __html: service.title }}></h2>
           <img
             src={service.featured_media.source_url}
-            alt={`${service.title}`}
+            alt={`Service: ` + service.title}
           />
           <p
             className="service-description"

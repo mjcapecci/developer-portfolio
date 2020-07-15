@@ -32,7 +32,10 @@ const PortfolioController = () => {
           <div className="column">
             <div className="card">
               <div className="card-image">
-                <img src={card.node.featured_media.source_url} alt="Test" />
+                <img
+                  src={card.node.featured_media.source_url}
+                  alt={`Project: ` + card.node.title}
+                />
               </div>
               <div
                 className="card-content"

@@ -18,6 +18,7 @@ const Image = ({ width }) => {
     <Img
       fluid={data.placeholderImage.childImageSharp.fluid}
       style={{ width: width }}
+      alt="Up arrows indicating a boost in sales and growth."
     />
   )
 }
