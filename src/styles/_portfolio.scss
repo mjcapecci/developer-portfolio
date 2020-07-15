@@ -56,6 +56,7 @@
 @media only screen and (max-width: 703px) {
   .portfolio-container {
     height: auto;
+    width: auto;
     grid-template-columns: repeat(1, 1fr);
   }
 }
