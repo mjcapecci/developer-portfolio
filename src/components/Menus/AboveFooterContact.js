@@ -26,10 +26,8 @@ const AboveFooterContact = () => {
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        action="/success"
+        // action="/success"
       >
-        <input type="hidden" name="bot-field" />
-        <input type="hidden" name="contact" value="contact" />
         <div className="field columns">
           <div className="control column">
             <label htmlFor="name">Name:</label>
@@ -39,7 +37,7 @@ const AboveFooterContact = () => {
               id="name"
               type="text"
               required
-              placeholder="Your name..."
+              placeholder="Luke Skywalker"
             />
           </div>
           <div className="control column">
@@ -50,7 +48,7 @@ const AboveFooterContact = () => {
               id="email"
               type="email"
               required
-              placeholder="Your email..."
+              placeholder="skywalker@gmail.com"
             />
           </div>
           <div className="control column">
@@ -60,7 +58,7 @@ const AboveFooterContact = () => {
               id="phone"
               className="input is-primary"
               type="phone"
-              placeholder="Your phone # (optional)..."
+              placeholder="(800) 123-4567 (optional)..."
             />
           </div>
         </div>
