@@ -12,7 +12,6 @@ const DeviceSection = () => {
   useEffect(() => {
     setTimeout(() => {
       setInit(true)
-      console.log("Hello")
     }, 400)
   }, [])
 
