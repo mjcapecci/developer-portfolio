@@ -14,7 +14,6 @@ module.exports = {
       options: {
         trackingId: "UA-172742172-1",
         head: true,
-        anonymize: true,
       },
     },
     `gatsby-plugin-react-helmet`,
