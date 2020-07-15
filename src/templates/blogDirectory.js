@@ -6,6 +6,14 @@ import Layout from "../components/Default/layout"
 import SEO from "../components/Default/seo"
 
 const BlogDirectory = ({ pageContext }) => {
+  const [init, setInit] = useState(false)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setInit(true)
+    }, 400)
+  }, [])
+
   return (
     <Layout>
       <SEO title="Blog" />
@@ -41,7 +49,9 @@ const BlogDirectory = ({ pageContext }) => {
                   ></small>
                 </div>
               </div>
-              <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }}></p>
+              <p
+                dangerouslySetInnerHTML={init && { __html: post.node.excerpt }}
+              ></p>
               <Link to={"/post/" + post.node.slug}>Read More</Link>
             </div>
           ))}
