@@ -3,6 +3,7 @@ import Layout from "../components/Default/layout"
 import SEO from "../components/Default/seo"
 
 import Prism from "prismjs"
+import { AllHtmlEntities } from "html-entities"
 
 const Post = ({ pageContext }) => {
   useEffect(() => {
@@ -14,7 +15,7 @@ const Post = ({ pageContext }) => {
 
   return (
     <Layout>
-      <SEO title={pageContext.title} />
+      <SEO title={AllHtmlEntities.decode(pageContext.title)} />
       <div className="container">
         <div className="post-container">
           <div className="blog-post">
