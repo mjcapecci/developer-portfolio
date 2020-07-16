@@ -51,7 +51,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: ogImage,
+          content: `https://www.michaelcapecci.com/` + ogImage,
         },
         {
           property: `og:type`,
@@ -71,7 +71,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:image`,
-          content: ogImage,
+          content: `https://www.michaelcapecci.com/` + ogImage,
         },
         {
           name: `twitter:description`,
