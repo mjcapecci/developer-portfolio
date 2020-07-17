@@ -47,12 +47,12 @@ function SEO({ description, lang, meta, title }) {
           content: title,
         },
         {
-          prefix="og: http://ogp.me/ns#",
+          prefix: "og: http://ogp.me/ns#",
           property: `og:description`,
           content: metaDescription,
         },
         {
-          prefix="og: http://ogp.me/ns#",
+          prefix: "og: http://ogp.me/ns#",
           property: `og:image`,
           content: `https://www.michaelcapecci.com` + ogImage,
         },
