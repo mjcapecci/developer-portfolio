@@ -42,7 +42,7 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
-          prefix="og: http://ogp.me/ns#",
+          prefix: "og: http://ogp.me/ns#",
           property: `og:title`,
           content: title,
         },
@@ -57,7 +57,7 @@ function SEO({ description, lang, meta, title }) {
           content: `https://www.michaelcapecci.com` + ogImage,
         },
         {
-          prefix="og: http://ogp.me/ns#",
+          prefix: "og: http://ogp.me/ns#",
           property: `og:type`,
           content: `website`,
         },
