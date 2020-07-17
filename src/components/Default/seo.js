@@ -42,25 +42,37 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
+          prefix="og: http://ogp.me/ns#",
           property: `og:title`,
           content: title,
         },
         {
+          prefix="og: http://ogp.me/ns#",
           property: `og:description`,
           content: metaDescription,
         },
         {
+          prefix="og: http://ogp.me/ns#",
           property: `og:image`,
           content: `https://www.michaelcapecci.com` + ogImage,
         },
         {
+          prefix="og: http://ogp.me/ns#",
           property: `og:type`,
           content: `website`,
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
+        {
+          name: `twitter:site`,
+          content: `@mjcapecci`,
+        },
+        {
+          name: `twitter:domain`,
+          content: `https://www.michaelcapecci.com`,
+        }
         {
           name: `twitter:creator`,
           content: site.siteMetadata.author,
