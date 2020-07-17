@@ -72,7 +72,7 @@ function SEO({ description, lang, meta, title }) {
         {
           name: `twitter:domain`,
           content: `https://www.michaelcapecci.com`,
-        }
+        },
         {
           name: `twitter:creator`,
           content: site.siteMetadata.author,
