@@ -10,7 +10,7 @@ import DeviceSection from "../components/Landing/DeviceSection"
 const IndexPage = () => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Freelance Web Developer" />
       <MainHero />
       <div className="container">
         <DeviceSection />
