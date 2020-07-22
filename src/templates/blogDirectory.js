@@ -24,20 +24,24 @@ const BlogDirectory = ({ pageContext }) => {
           {pageContext.posts.map((post, i) => (
             <div className="card blog-post-header" key={i}>
               <div className="post-banner-container">
-                <img
-                  src={
-                    post.node.featured_media
-                      ? post.node.featured_media.source_url
-                      : ""
-                  }
-                  alt={AllHtmlEntities.decode(
-                    post.node.featured_media.alt_text
-                  )}
-                ></img>
-                <h3
-                  dangerouslySetInnerHTML={{ __html: post.node.title }}
-                  className="title"
-                ></h3>
+                <Link to={"/post/" + post.node.slug}>
+                  <img
+                    src={
+                      post.node.featured_media
+                        ? post.node.featured_media.source_url
+                        : ""
+                    }
+                    alt={AllHtmlEntities.decode(
+                      post.node.featured_media.alt_text
+                    )}
+                  ></img>
+                </Link>
+                <Link to={"/post/" + post.node.slug}>
+                  <h3
+                    dangerouslySetInnerHTML={{ __html: post.node.title }}
+                    className="title"
+                  ></h3>
+                </Link>
                 <div className="tags">
                   <small
                     className="publish-date"
