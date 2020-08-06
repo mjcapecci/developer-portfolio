@@ -7,7 +7,7 @@ import scrollTo from "gatsby-plugin-smoothscroll"
 const MainHero = () => {
   const bgImageQuery = useStaticQuery(graphql`
     query bgImage {
-      file(relativePath: { eq: "heroBG.webp" }) {
+      file(relativePath: { eq: "heroBG.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1920, quality: 100) {
             ...GatsbyImageSharpFluid
