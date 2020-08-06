@@ -24,7 +24,7 @@ const MainHero = () => {
       Tag="section"
       className="landing-top"
       fluid={bgImage}
-      backgroundColor={"#2D5E58"}
+      backgroundColor={"#92C7C3"}
     >
       <div className="main-hero">
         <p className="hide-on-mobile">MICHAEL CAPECCI</p>
