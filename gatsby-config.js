@@ -16,6 +16,8 @@ module.exports = {
         head: true,
       },
     },
+    `gatsby-plugin-smoothscroll`,
+    `gatsby-background-image`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
