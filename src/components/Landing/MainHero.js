@@ -10,8 +10,8 @@ const MainHero = () => {
       file(relativePath: { eq: "heroBG.jpg" }) {
         id
         childImageSharp {
-          fluid(maxWidth: 1920, quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
+          fluid(maxWidth: 1920, quality: 60) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
