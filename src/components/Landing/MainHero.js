@@ -21,7 +21,12 @@ const MainHero = () => {
   const bgImage = bgImageQuery.file.childImageSharp.fluid
 
   return (
-    <BackgroundImage Tag="section" className="landing-top" fluid={bgImage}>
+    <BackgroundImage
+      Tag="section"
+      className="landing-top"
+      fluid={bgImage}
+      backgroundColor={"#2D5E58"}
+    >
       <div className="main-hero">
         <p className="hide-on-mobile">MICHAEL CAPECCI</p>
         <h1 className="title is-1">FREELANCE</h1>
