@@ -33,7 +33,9 @@ const MainHero = () => {
         <h1 className="title is-1" style={{ transform: "translateX(-4.5px)" }}>
           DEVELOPER
         </h1>
-        <p className="descriptor">Small Business & E-Commerce Solutions</p>
+        <p className="descriptor hide-on-mobile">
+          Small Business & E-Commerce Solutions
+        </p>
         <div className="button-container">
           <button
             className="button is-danger special"
