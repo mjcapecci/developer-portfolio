@@ -8,9 +8,8 @@ const MainHero = () => {
   const bgImageQuery = useStaticQuery(graphql`
     query bgImage {
       file(relativePath: { eq: "heroBG.jpg" }) {
-        id
         childImageSharp {
-          fluid(maxWidth: 1920, quality: 60) {
+          fluid(maxWidth: 1920, quality: 50) {
             ...GatsbyImageSharpFluid
           }
         }
