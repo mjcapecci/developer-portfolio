@@ -33,9 +33,13 @@
   }
 }
 
+.descriptor {
+  margin-top: 3rem;
+}
+
 .button-container {
   width: 100%;
-  transform: translateY(20px);
+  transform: translateY(28px);
 }
 
 @media only screen and (max-height: 900px) {

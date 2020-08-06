@@ -27,15 +27,19 @@ const MainHero = () => {
       backgroundColor={"#92C7C3"}
     >
       <div className="main-hero">
-        <p className="hide-on-mobile">MICHAEL CAPECCI</p>
-        <h1 className="title is-1">FREELANCE</h1>
-        <h1 className="title is-1">DEVELOPER</h1>
+        <h1 className="title is-1" style={{ transform: "translateX(-4.5px)" }}>
+          FREELANCE
+        </h1>
+        <h1 className="title is-1" style={{ transform: "translateX(-4.5px)" }}>
+          DEVELOPER
+        </h1>
+        <p className="descriptor">Small Business & E-Commerce Solutions</p>
         <div className="button-container">
           <button
             className="button is-danger special"
             onClick={() => scrollTo("#anchor")}
           >
-            Get Started
+            GET STARTED
           </button>
         </div>
       </div>
