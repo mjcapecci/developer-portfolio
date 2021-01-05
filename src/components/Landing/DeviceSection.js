@@ -17,11 +17,12 @@ const DeviceSection = () => {
 
   return (
     <section className="device-section container">
+      <h2 className="centered-title-h2">About Me</h2>
       <div className="devices-image">
         <DeviceImage width={init && width / 2}></DeviceImage>
         <p>
-          My goal is to make products that are accessible to everyone,
-          everywhere. Using{" "}
+          I'm a software developer with a particular focus on building
+          full-stack applications with React and Node.js. Using{" "}
           <strong className="gatsby-color">the newest web technology</strong>, I
           am able to deliver products that are fast, secure, and will{" "}
           <strong className="attention-color">

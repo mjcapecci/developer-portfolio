@@ -1,4 +1,11 @@
-.services-cards-container {
+.skills {
+  margin: 5rem 0rem 8rem 0rem;
+  h2 {
+    text-align: center;
+  }
+}
+
+.skills-cards-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
@@ -8,11 +15,11 @@
     font-family: "Jaldi", sans-serif;
   }
 
-  .service-card {
+  .skill-card {
     color: white;
     .the-card {
       width: 100%;
-      min-height: 36rem;
+      min-height: 5rem;
       transform-style: preserve-3d;
       transition: all 0.5s ease;
       .the-card-front {
@@ -21,26 +28,31 @@
         align-items: center;
         justify-content: space-between;
         padding: 1rem;
-        min-height: 36rem;
+        min-height: 20rem;
         background: #333;
         border-radius: 5px;
-        box-shadow: 0px 5px 10px 1px #888;
         transition: all 0.2s ease;
 
-        img {
-          margin-bottom: 1rem;
+        .card-title {
+          text-align: center;
         }
 
-        .service-description {
+        svg {
+          margin-top: 1rem;
+        }
+
+        .skill-description {
           height: 6rem;
         }
 
-        .service-list {
+        .skill-list {
           min-height: 8rem;
           margin-bottom: 1rem;
-          .service-list-item {
+          .skill-list-item {
             padding: 0.2rem;
+            list-style: none;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
 
             &:last-child {
               border-bottom: none;
@@ -53,23 +65,23 @@
 }
 
 @media only screen and (max-width: 1407px) {
-  .services-cards-container {
+  .skills-cards-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media only screen and (max-width: 1023px) {
-  .services-cards-container {
+  .skills-cards-container {
     margin-left: 2rem;
     margin-right: 2rem;
   }
 }
 
 @media only screen and (max-width: 757px) {
-  .services-cards-container {
+  .skills-cards-container {
     grid-template-columns: repeat(1, 1fr);
 
-    .service-card {
+    .skill-card {
       width: auto;
       .card-text {
         font-size: 16px;
@@ -80,7 +92,7 @@
 }
 
 @media only screen and (max-width: 414px) {
-  .service-card {
+  .skill-card {
     margin-bottom: 1rem;
   }
 }

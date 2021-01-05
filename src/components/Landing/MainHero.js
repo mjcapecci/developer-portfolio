@@ -4,6 +4,8 @@ import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import scrollTo from "gatsby-plugin-smoothscroll"
 
+import Socials from "../Social/Socials"
+
 const MainHero = () => {
   const bgImageQuery = useStaticQuery(graphql`
     query bgImage {
@@ -33,13 +35,14 @@ const MainHero = () => {
         <h1 className="title is-1" style={{ transform: "translateX(-4.5px)" }}>
           CAPECCI
         </h1>
-        <p className="descriptor hide-on-mobile">Software Developer</p>
+        <p className="descriptor is-centered">Software Developer</p>
+        <Socials />
         <div className="button-container">
           <button
             className="button is-danger special"
-            onClick={() => scrollTo("#anchor")}
+            onClick={() => scrollTo("#work")}
           >
-            GET STARTED
+            SEE WORK
           </button>
         </div>
       </div>

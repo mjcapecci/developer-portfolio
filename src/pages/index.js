@@ -4,8 +4,9 @@ import Layout from "../components/Default/layout"
 import SEO from "../components/Default/seo"
 
 import MainHero from "../components/Landing/MainHero"
-import UnderHero from "../components/Landing/UnderHero"
 import DeviceSection from "../components/Landing/DeviceSection"
+import Skills from "../components/Landing/Skills"
+import FeaturedWork from "../components/Landing/FeaturedWork"
 
 const IndexPage = () => {
   return (
@@ -14,7 +15,8 @@ const IndexPage = () => {
       <MainHero />
       <div className="container">
         <DeviceSection />
-        <UnderHero />
+        <Skills />
+        <FeaturedWork />
       </div>
     </Layout>
   )

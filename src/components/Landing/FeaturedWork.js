@@ -11,7 +11,7 @@ import {
 
 import { motion } from "framer-motion"
 
-const UnderHeroItem = ({ icon, text, content, onClick, isOpen, color }) => {
+const WorkItem = ({ icon, text, content, onClick, isOpen, color }) => {
   return (
     <>
       <motion.div animate onClick={onClick} class="benefit-card">
@@ -35,17 +35,17 @@ const UnderHeroItem = ({ icon, text, content, onClick, isOpen, color }) => {
   )
 }
 
-const UnderHero = () => {
+const FeaturedWork = () => {
   const [currentItem, setCurrentItem] = useState(null)
 
   return (
-    <section className="under-hero">
-      <h1>My Top Priorities:</h1>
+    <section className="under-hero" id="work">
+      <h2 className="centered-title-h2">Featured Work:</h2>
       <p className="learnMore">(Click cards to learn more)</p>
       <div className="benefit-cards-container">
         <motion.div animate class="card-grid">
           {itemCards.map(item => (
-            <UnderHeroItem
+            <WorkItem
               icon={item.icon}
               text={item.text}
               content={item.content}
@@ -105,4 +105,4 @@ const itemCards = [
   },
 ]
 
-export default UnderHero
+export default FeaturedWork

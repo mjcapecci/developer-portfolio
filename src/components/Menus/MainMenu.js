@@ -30,7 +30,7 @@ const MainMenu = () => {
 
   const [isToggled, setToggle] = useState(false)
 
-  const menuItems = ["Services", "Work", "Contact", "Blog"]
+  const menuItems = ["About", "Skills", "Work", "Blog"]
 
   return (
     <>
