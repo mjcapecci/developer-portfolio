@@ -28,14 +28,12 @@ const MainHero = () => {
     >
       <div className="main-hero">
         <h1 className="title is-1" style={{ transform: "translateX(-4.5px)" }}>
-          FREELANCE
+          MICHAEL
         </h1>
         <h1 className="title is-1" style={{ transform: "translateX(-4.5px)" }}>
-          DEVELOPER
+          CAPECCI
         </h1>
-        <p className="descriptor hide-on-mobile">
-          Small Business & E-Commerce Solutions
-        </p>
+        <p className="descriptor hide-on-mobile">Software Developer</p>
         <div className="button-container">
           <button
             className="button is-danger special"

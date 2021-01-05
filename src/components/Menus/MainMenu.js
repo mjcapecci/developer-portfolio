@@ -30,20 +30,7 @@ const MainMenu = () => {
 
   const [isToggled, setToggle] = useState(false)
 
-  const { allWordpressWpApiMenusMenusItems } = useStaticQuery(graphql`
-    {
-      allWordpressWpApiMenusMenusItems {
-        edges {
-          node {
-            items {
-              object_slug
-              title
-            }
-          }
-        }
-      }
-    }
-  `)
+  const menuItems = ["Services", "Work", "Contact", "Blog"]
 
   return (
     <>
@@ -81,13 +68,11 @@ const MainMenu = () => {
               animate={{ y: 0 }}
               exit={{ y: -500 }}
             >
-              {allWordpressWpApiMenusMenusItems.edges[0].node.items.map(
-                navItem => (
-                  <Link className="navbar-item" to={"/" + navItem.object_slug}>
-                    {navItem.title}
-                  </Link>
-                )
-              )}
+              {menuItems.map(item => (
+                <Link className="navbar-item" to={"/" + item}>
+                  {item}
+                </Link>
+              ))}
               <Search></Search>
             </motion.div>
           )}
@@ -96,16 +81,16 @@ const MainMenu = () => {
           <div className="navbar-item no-hover">
             <Search></Search>
           </div>
-          {allWordpressWpApiMenusMenusItems.edges[0].node.items.map(navItem => (
+          {menuItems.map(item => (
             <Link
               className={
                 path === "/" || path === "/success"
                   ? "navbar-item item-white"
                   : "navbar-item"
               }
-              to={"/" + navItem.object_slug}
+              to={"/" + item.object_slug}
             >
-              {navItem.title}
+              {item}
             </Link>
           ))}
         </div>
