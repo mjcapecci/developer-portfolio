@@ -7,11 +7,12 @@ import {
   faDonate,
   faUniversalAccess,
   faUserCheck,
+  faCog,
 } from "@fortawesome/free-solid-svg-icons"
 
 import { motion } from "framer-motion"
 
-const WorkItem = ({ icon, text, content, onClick, isOpen, color }) => {
+const WorkItem = ({ icon, stack, text, content, onClick, isOpen, color }) => {
   return (
     <>
       <motion.div animate onClick={onClick} class="benefit-card">
@@ -20,6 +21,10 @@ const WorkItem = ({ icon, text, content, onClick, isOpen, color }) => {
           <div className={`the-card-front ${color}`}>
             <p>{text}</p>
             <FontAwesomeIcon icon={icon} size="3x" />
+            <div>
+              <p className="work-tech-stack-title">Featured Tech:</p>
+              <p className="work-tech-stack">{stack}</p>
+            </div>
           </div>
           <div className="the-card-back">
             <motion.p
@@ -47,6 +52,7 @@ const FeaturedWork = () => {
           {itemCards.map(item => (
             <WorkItem
               icon={item.icon}
+              stack={item.stack}
               text={item.text}
               content={item.content}
               isOpen={currentItem === item.text}
@@ -58,6 +64,15 @@ const FeaturedWork = () => {
           ))}
         </motion.div>
       </div>
+      <div className="portfolio-link">
+        <a
+          href="https://github.com/mjcapecci/developer-portfolio"
+          target="_blank"
+          rel="nofollow noopener"
+        >
+          <FontAwesomeIcon icon={faCog} size="1x" /> Portfolio Source
+        </a>
+      </div>
     </section>
   )
 }
@@ -65,43 +80,55 @@ const FeaturedWork = () => {
 const itemCards = [
   {
     icon: faLock,
-    text: "Security",
+    type: "commercial",
+    text: "Quick Product Import",
+    stack: "React, Redux, Shopify Polaris, Node.js, Express, MongoDB",
     content:
       "New development methods eliminate many common security risks. <a href='post/whats-so-good-about-static-site-generators' class='light-link'>Learn More</a>",
     color: "h-blue",
   },
   {
     icon: faTachometerAlt,
-    text: "Speed",
+    type: "commercial",
+    text: "St. Luke Business Directory",
+    stack: "React, Redux, Bootstrap, Node.js, Express, MongoDB",
     content:
       "A FAST website leads to conversions. I build fast products with state-of-the-art tech.",
     color: "h-red",
   },
   {
+    icon: faUserCheck,
+    type: "commercial",
+    text: "Frontier Web Development",
+    stack: "React, Gatsby, Node.js, MongoDB, Shopify, Python",
+    content: "A website must be easy to use to accomplish its goal.",
+    color: "h-purple",
+  },
+  {
     icon: faChartLine,
-    text: "SEO",
+    type: "personal",
+    text: "[Next.js Full-stack Project]",
+    stack: "Next.js, TypeScript, Serverless, Firebase",
     content:
       "Get found! Careful search engine optimization will put your name on your customers' screens.",
     color: "h-orange",
   },
   {
     icon: faDonate,
-    text: "Cost",
+    type: "personal",
+    text: "Learnalysis",
+    stack: "React, Redux, Materialize CSS, Node.js, Express, MongoDB",
     content:
       "Server costs should be low. In many cases, I am able to host products for FREE on Netlify.",
     color: "h-green",
   },
   {
     icon: faUniversalAccess,
-    text: "Accessibility",
+    type: "personal",
+    text: "Contractr.io",
+    stack: "React, Redux, Bootstrap, Node.js, Express, MySQL",
     content: "A great product is accessible to everyone, everywhere.",
     color: "h-yellow",
-  },
-  {
-    icon: faUserCheck,
-    text: "Ease of Use",
-    content: "A website must be easy to use to accomplish its goal.",
-    color: "h-purple",
   },
 ]
 

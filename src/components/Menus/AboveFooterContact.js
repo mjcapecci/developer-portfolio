@@ -16,12 +16,11 @@ const AboveFooterContact = () => {
       }
     >
       <h3 id="anchor" className="attention-color text-center">
-        Let's Get Started.
+        Get In Touch.
       </h3>
       <p>
-        Leave me a message, and I'll be in touch ASAP (
-        <strong className="attention-color">within 24 hours</strong>) to start
-        discussing your project.
+        I'd love to hear from you! Leave me a message, and I'll be in touch ASAP
+        (<strong className="attention-color">within 24 hours</strong>).
       </p>
       <form name="contact" method="POST" data-netlify="true" action="/success">
         <input type="hidden" name="contact" value="contact" />

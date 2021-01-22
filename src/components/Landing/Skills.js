@@ -32,7 +32,7 @@ const Skills = () => {
     {
       title: "Front End",
       items: [
-        "JavaScript",
+        "JavaScript | TypeScript",
         "React | Redux",
         "CSS3 | SCSS",
         "Bootstrap | Materialize",
@@ -47,13 +47,7 @@ const Skills = () => {
     },
     {
       title: "Tooling",
-      items: [
-        "Enzyme | Jest",
-        "NPM, Composer, Pip",
-        "Git | GitHub",
-        "Webpack",
-        "Babel",
-      ],
+      items: ["Enzyme | Jest", "NPM, Pip", "Git | GitHub", "Webpack", "Babel"],
       icon: faTools,
     },
     {
