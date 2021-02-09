@@ -47,7 +47,7 @@ const Skills = () => {
     },
     {
       title: "Tooling",
-      items: ["Enzyme | Jest", "NPM, Pip", "Git | GitHub", "Webpack", "Babel"],
+      items: ["Enzyme | Jest", "NPM | Pip", "Git | GitHub", "Webpack", "Babel"],
       icon: faTools,
     },
     {

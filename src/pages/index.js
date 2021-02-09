@@ -11,7 +11,7 @@ import FeaturedWork from "../components/Landing/FeaturedWork"
 const IndexPage = () => {
   return (
     <Layout>
-      <SEO title="Freelance Web Developer" />
+      <SEO title="Software Developer" />
       <MainHero />
       <div className="container">
         <DeviceSection />

@@ -3,28 +3,44 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faChartLine,
   faTachometerAlt,
-  faLock,
   faDonate,
   faUniversalAccess,
   faUserCheck,
   faCog,
 } from "@fortawesome/free-solid-svg-icons"
 
+import QPI from "../../images/appLogos/qpi.svg"
+import Frontier from "../../images/appLogos/frontier.png"
+import Learnalysis from "../../images/appLogos/learnalysis.png"
+import StLuke from "../../images/appLogos/st-luke.svg"
+import Contractr from "../../images/appLogos/contractr.svg"
+
 import { motion } from "framer-motion"
 
-const WorkItem = ({ icon, stack, text, content, onClick, isOpen, color }) => {
+const WorkItem = ({
+  icon,
+  image,
+  width,
+  stack,
+  text,
+  content,
+  onClick,
+  isOpen,
+  color,
+}) => {
   return (
     <>
       <motion.div animate onClick={onClick} class="benefit-card">
         {" "}
         <div className={isOpen ? "the-card-active" : "the-card"}>
           <div className={`the-card-front ${color}`}>
-            <p>{text}</p>
             <FontAwesomeIcon icon={icon} size="3x" />
-            <div>
-              <p className="work-tech-stack-title">Featured Tech:</p>
-              <p className="work-tech-stack">{stack}</p>
-            </div>
+            <img
+              src={image}
+              width={width}
+              alt={text}
+              style={{ margin: "0 2rem" }}
+            ></img>
           </div>
           <div className="the-card-back">
             <motion.p
@@ -52,6 +68,8 @@ const FeaturedWork = () => {
           {itemCards.map(item => (
             <WorkItem
               icon={item.icon}
+              image={item.image}
+              width={item.width}
               stack={item.stack}
               text={item.text}
               content={item.content}
@@ -79,7 +97,8 @@ const FeaturedWork = () => {
 
 const itemCards = [
   {
-    icon: faLock,
+    icon: null,
+    image: QPI,
     type: "commercial",
     text: "Quick Product Import",
     stack: "React, Redux, Shopify Polaris, Node.js, Express, MongoDB",
@@ -88,7 +107,8 @@ const itemCards = [
     color: "h-blue",
   },
   {
-    icon: faTachometerAlt,
+    icon: null,
+    image: StLuke,
     type: "commercial",
     text: "St. Luke Business Directory",
     stack: "React, Redux, Bootstrap, Node.js, Express, MongoDB",
@@ -97,9 +117,11 @@ const itemCards = [
     color: "h-red",
   },
   {
-    icon: faUserCheck,
+    icon: null,
+    image: Frontier,
     type: "commercial",
     text: "Frontier Web Development",
+    width: 210,
     stack: "React, Gatsby, Node.js, MongoDB, Shopify, Python",
     content: "A website must be easy to use to accomplish its goal.",
     color: "h-purple",
@@ -114,7 +136,9 @@ const itemCards = [
     color: "h-orange",
   },
   {
-    icon: faDonate,
+    icon: null,
+    image: Learnalysis,
+    width: 320,
     type: "personal",
     text: "Learnalysis",
     stack: "React, Redux, Materialize CSS, Node.js, Express, MongoDB",
@@ -123,7 +147,8 @@ const itemCards = [
     color: "h-green",
   },
   {
-    icon: faUniversalAccess,
+    icon: null,
+    image: Contractr,
     type: "personal",
     text: "Contractr.io",
     stack: "React, Redux, Bootstrap, Node.js, Express, MySQL",
