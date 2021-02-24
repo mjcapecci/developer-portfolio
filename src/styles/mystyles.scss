@@ -28,7 +28,11 @@ html {
 }
 
 .container-less-margin {
-  margin: 3.2rem;
+  margin: 3.2rem 0;
+
+  p {
+    margin: 1rem 0;
+  }
 }
 
 .main {

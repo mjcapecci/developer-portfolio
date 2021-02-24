@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCog } from "@fortawesome/free-solid-svg-icons"
 
@@ -11,7 +12,16 @@ import ParkAve from "../../images/appLogos/park-ave.png"
 
 import { motion } from "framer-motion"
 
-const WorkItem = ({ image, width, text, content, onClick, isOpen, color }) => {
+const WorkItem = ({
+  image,
+  width,
+  text,
+  link,
+  content,
+  onClick,
+  isOpen,
+  color,
+}) => {
   return (
     <>
       <motion.div animate onClick={onClick} class="benefit-card">
@@ -32,6 +42,9 @@ const WorkItem = ({ image, width, text, content, onClick, isOpen, color }) => {
               animate={{ opacity: 1 }}
               dangerouslySetInnerHTML={{ __html: content }}
             ></motion.p>
+            <div className="project-buttons">
+              <Link to={`/projects/${link}`}>Learn More</Link>
+            </div>
           </div>
         </div>
       </motion.div>
@@ -54,6 +67,7 @@ const FeaturedWork = () => {
               width={item.width}
               stack={item.stack}
               text={item.text}
+              link={item.link}
               content={item.content}
               isOpen={currentItem === item.text}
               color={item.color}
@@ -81,18 +95,21 @@ const itemCards = [
   {
     image: QPI,
     text: "Quick Product Import",
+    link: "quick-product-import",
     content:
       "A public Shopify application for helping merchants upload their store inventories via .csv import. Built with React, Node.js, Express, and MongoDB.",
   },
   {
     image: StLuke,
     text: "St. Luke Business Directory",
+    link: "st-luke-business-directory",
     content:
       "A business directory made for connecting business owners with members of the St. Luke community in the Greater Philadelphia area. Built with React, Node.js, Express, and MongoDB.",
   },
   {
     image: Frontier,
     text: "Frontier Web Development",
+    link: "frontier-web-development",
     width: 210,
     content:
       "A small group of developers from the Chicagoland area who develop Shopify applications and themes.",
@@ -101,6 +118,7 @@ const itemCards = [
     image: ParkAve,
     width: 300,
     text: "Park Avenue Dental Care",
+    link: "park-avenue-dental-care",
     content:
       "A website developed for a local dental practice. Built purely with HTML, CSS, and vanilla JavaScript, and hosted on Netlify.",
   },
@@ -108,7 +126,7 @@ const itemCards = [
     image: Contractr,
     type: "personal",
     text: "Contractr.io",
-    stack: "React, Redux, Bootstrap, Node.js, Express, MySQL",
+    link: "contractr",
     content:
       "An application for helping users find nearby contractors to help in completing tasks of any variety. Developed with React, Node.js, Express, and MySQL.",
     color: "h-yellow",
@@ -118,7 +136,7 @@ const itemCards = [
     width: 320,
     type: "personal",
     text: "Learnalysis",
-    stack: "React, Node.js, Express, MongoDB",
+    link: "learnalysis",
     content:
       "An application for helping users track their progress across all of their learning endeavors. Build with React, Node.js, Express, and MongoDB.",
     color: "h-green",
