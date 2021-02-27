@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { Link } from "gatsby"
 
 import lightLogo from "../../images/light-logo.png"
 import darkLogo from "../../images/dark-logo.png"
@@ -84,11 +84,17 @@ const MainMenu = () => {
           {menuItems.map(item => (
             <Link
               className={
-                path === "/" || path === "/success"
-                  ? "navbar-item item-white"
-                  : "navbar-item"
+                path.includes("/projects/") ||
+                path.includes("/posts/") ||
+                path.includes("/blog")
+                  ? "navbar-item"
+                  : "navbar-item item-white"
               }
-              to={"/" + item.object_slug}
+              to={
+                item === "Blog"
+                  ? "/blog"
+                  : "/#" + item.charAt(0).toLowerCase() + item.slice(1)
+              }
             >
               {item}
             </Link>

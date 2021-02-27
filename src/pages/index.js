@@ -14,8 +14,11 @@ const IndexPage = () => {
       <SEO title="Software Developer" />
       <MainHero />
       <div className="container">
+        <div id="about" className="nav-anchor"></div>
         <DeviceSection />
+        <div id="skills" className="nav-anchor"></div>
         <Skills />
+        <div id="work" className="nav-anchor"></div>
         <FeaturedWork />
       </div>
     </Layout>

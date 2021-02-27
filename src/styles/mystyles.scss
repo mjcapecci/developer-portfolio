@@ -21,10 +21,11 @@ $family-sans-serif: "Jaldi", sans-serif;
 
 html {
   font-size: 18px;
+  background: #fafafa;
 }
 
 .container {
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
 
 .container-less-margin {
@@ -145,4 +146,12 @@ h6 {
     height: 40;
     width: 40;
   }
+}
+
+.nav-anchor {
+  height: 10px;
+}
+
+#skills {
+  margin-top: 0rem;
 }

@@ -34,9 +34,22 @@ module.exports = {
         path: `${__dirname}/src/projects`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts`,
+      },
+    },
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-copy-linked-files`],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -49,6 +49,13 @@
 
 .project-buttons {
   margin-top: 1rem;
+  a {
+    color: #27d7a0;
+
+    &:hover {
+      color: #15bf98;
+    }
+  }
 }
 
 @media only screen and (max-height: 900px) {

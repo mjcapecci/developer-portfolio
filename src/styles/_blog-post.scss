@@ -36,6 +36,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
+      padding-bottom: 2rem;
     }
 
     img {
@@ -43,6 +45,8 @@
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 0rem;
+      border: 2px solid #333;
+      border-radius: 7px;
     }
 
     figcaption {
@@ -53,7 +57,11 @@
     }
 
     p {
-      width: 90vh;
+      width: auto;
+      width: auto;
+      display: flex;
+      justify-content: center;
+      padding: 0 10rem;
     }
 
     .finale {
@@ -63,6 +71,9 @@
       border: 2px solid #e84c3c;
       background: none;
       color: #222232;
+      a {
+        display: inline;
+      }
     }
 
     .email {
@@ -90,6 +101,28 @@
   }
 }
 
+.project-button {
+  background: none;
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 0 1rem 0.7rem 1rem;
+  padding: 0.5rem;
+  transition: all 0.1s ease;
+
+  &:hover {
+    background: rgb(224, 224, 224);
+  }
+}
+
+.project-button-disabled {
+  background: none;
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 0 1rem 0.7rem 1rem;
+  padding: 0.5rem;
+  transition: all 0.1s ease;
+}
+
 @media only screen and (max-height: 900px) {
   .post-container {
     .blog-post {
@@ -106,7 +139,7 @@
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1070px) {
   .post-container {
     .blog-post {
       .blog-post-markup {
@@ -114,8 +147,10 @@
       }
       p {
         width: 100%;
+        padding: 0 2rem;
       }
       .finale {
+        padding: 0.5rem;
         width: 90%;
       }
     }
@@ -129,6 +164,15 @@
 
   .blog-post-markup {
     width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  p {
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
   }
 }
 

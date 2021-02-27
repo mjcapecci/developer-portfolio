@@ -56,7 +56,7 @@ const FeaturedWork = () => {
   const [currentItem, setCurrentItem] = useState(null)
 
   return (
-    <section className="under-hero" id="work">
+    <section className="under-hero">
       <h2 className="centered-title-h2">Featured Work:</h2>
       <p className="learnMore">(Click cards to learn more)</p>
       <div className="benefit-cards-container">

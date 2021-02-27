@@ -1,10 +1,10 @@
 ---
 slug: "/projects/learnalysis"
 title: "Learnalysis"
+liveLink: "https://learnalysis.com"
+sourceLink: "https://github.com/mjcapecci/learnalysis"
 position: 5
 ---
-
-### [Insert GIF Here]
 
 ## About
 
@@ -15,3 +15,5 @@ The application features Google OAuth, helpful stats that users can read to gain
 ### Key Technologies
 
 React, Materialize CSS, Node.js, Express, MongoDB
+
+![Learnalysis](../images/learnalysisPreview.gif)

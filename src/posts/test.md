@@ -1,9 +1,6 @@
 ---
-slug: "/projects/contractr"
-title: "Contractr"
-liveLink: "https://www.contractr.io"
-sourceLink: "https://github.com/mjcapecci/Contractr.io"
-position: 3
+slug: "/posts/test"
+title: "test"
 ---
 
 ## About
