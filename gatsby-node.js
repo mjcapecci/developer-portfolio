@@ -1,41 +1,24 @@
-const path = require(`path`)
+const path = require("path")
 const { slash } = require(`gatsby-core-utils`)
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-
-  const result = await graphql(`
+  const projectTemplate = require.resolve(`./src/templates/project.js`)
+  const postTemplate = require.resolve(`./src/templates/post.js`)
+  const projects = await graphql(`
     {
-      allWordpressPage {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___position] }
+        limit: 1000
+      ) {
         edges {
           node {
-            id
-            path
-            status
-            title
-            content
-            template
-          }
-        }
-      }
-      allWordpressPost {
-        edges {
-          node {
-            id
-            date
-            path
-            slug
-            status
-            title
-            content
-            excerpt
-            template
-            categories {
-              name
-            }
-            featured_media {
-              alt_text
-              source_url
+            html
+            frontmatter {
+              slug
+              title
+              liveLink
+              sourceLink
             }
           }
         }
@@ -43,76 +26,69 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  if (result.errors) {
-    throw new Error(result.errors)
-  }
-
-  // Access query results via object destructuring
-  const { allWordpressPage, allWordpressPost } = result.data
-
-  const pageTemplate = path.resolve(`./src/templates/page.js`)
-  const portfolioUnderContentTemplate = path.resolve(
-    `./src/templates/portfolioUnderContent.js`
-  )
-  const servicesUnderContentTemplate = path.resolve(
-    `./src/templates/servicesUnderContent.js`
-  )
-  const socialUnderContentTemplate = path.resolve(
-    `./src/templates/socialUnderContent.js`
-  )
-  // The Page ID is prefixed with 'PAGE_'
-  allWordpressPage.edges.forEach(edge => {
-    console.log(edge.node.template)
-    function templateType(edge) {
-      switch (edge.node.template) {
-        case "portfolio_under_content.php":
-          return portfolioUnderContentTemplate
-        case "services_under_contact.php":
-          return servicesUnderContentTemplate
-        case "social_under_content.php":
-          return socialUnderContentTemplate
-        default:
-          return pageTemplate
+  const posts = await graphql(`
+    {
+      allMarkdownRemark(
+        filter: { frontmatter: { slug: { regex: "/posts/" } } }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              slug
+              title
+            }
+          }
+        }
       }
     }
-
+  `)
+  // Handle errors
+  if (projects.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+  projects.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
-      path: edge.node.path,
-      component: slash(templateType(edge)),
+      path: node.frontmatter.slug,
+      component: projectTemplate,
       context: {
-        id: edge.node.id,
-        status: edge.node.status,
-        title: edge.node.title,
-        content: edge.node.content,
+        slug: node.frontmatter.slug,
+        title: node.frontmatter.title,
+        liveLink: node.frontmatter.liveLink,
+        sourceLink: node.frontmatter.sourceLink,
+        html: node.html,
       },
     })
   })
 
-  const postTemplate = path.resolve(`./src/templates/post.js`)
-  const blogDirectoryTemplate = path.resolve(`./src/templates/blogDirectory.js`)
-  // The Post ID is prefixed with 'POST_'
-  allWordpressPost.edges.forEach(edge => {
+  const blogDirectoryTemplate = path.resolve("./src/templates/blogDirectory.js")
+  if (posts.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+  posts.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
-      path: "/post" + edge.node.path,
-      component: slash(postTemplate),
+      path: node.frontmatter.slug,
+      component: postTemplate,
       context: {
-        id: edge.node.id,
-        status: edge.node.status,
-        title: edge.node.title,
-        content: edge.node.content,
+        id: node.id,
+        title: node.frontmatter.title,
+        content: node.content,
       },
     })
   })
-
   const postsPerPage = 5
-  const numberOfPages = Math.ceil(allWordpressPost.edges.length / postsPerPage)
+  const numberOfPages = Math.ceil(
+    posts.data.allMarkdownRemark.edges.length / postsPerPage
+  )
 
   Array.from({ length: numberOfPages }).forEach((page, i) => {
     createPage({
       path: i === 0 ? `/blog` : `/blog/${i + 1}`,
       component: slash(blogDirectoryTemplate),
       context: {
-        posts: allWordpressPost.edges.slice(
+        posts: posts.data.allMarkdownRemark.edges.slice(
           i * postsPerPage,
           i * postsPerPage + postsPerPage
         ),

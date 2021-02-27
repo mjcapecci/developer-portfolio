@@ -17,25 +17,26 @@ const DeviceSection = () => {
 
   return (
     <section className="device-section container">
+      <h2 className="centered-title-h2">About Me</h2>
       <div className="devices-image">
         <DeviceImage width={init && width / 2}></DeviceImage>
         <p>
-          My goal is to make products that are accessible to everyone,
-          everywhere. Using{" "}
-          <strong className="gatsby-color">the newest web technology</strong>, I
-          am able to deliver products that are fast, secure, and will{" "}
+          Hello!{" "}
           <strong className="attention-color">
-            turn your new visitors into your biggest fans.
+            I'm a software developer from the Chicago area
           </strong>
+          . Since mid 2019, I have had a particular focus on building
+          applications with React and Node.js.
         </p>
       </div>
       <div className="devices-image reverse-flex">
         <p>
           <strong className="attention-color">
-            Your growth is my mission.
-          </strong>{" "}
-          And I won't stop until the mission is complete. My products are
-          developed with an SEO-first, conversion-driven mentality.
+            I am ready and able to dig into the details of a new project
+          </strong>
+          , utilize effective communication with the team, bring ideas to the
+          table based on past problems solved and new understandings, and write
+          clean, well-documented code.
         </p>
         <GrowthImage width={init && width / 2}></GrowthImage>
       </div>

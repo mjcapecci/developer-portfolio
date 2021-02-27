@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { graphql, useStaticQuery } from "gatsby"
+// import { graphql, useStaticQuery } from "gatsby"
 import SearchResultItem from "./SearchResultItem"
 
 const Search = () => {
@@ -9,26 +9,9 @@ const Search = () => {
     query: emptyQuery,
   })
 
-  const { allWordpressPost } = useStaticQuery(graphql`
-    {
-      allWordpressPost {
-        edges {
-          node {
-            title
-            slug
-            content
-            categories {
-              name
-            }
-          }
-        }
-      }
-    }
-  `)
-
   const handleSearch = e => {
     const query = e.target.value
-    const posts = allWordpressPost.edges || []
+    const posts = [] // TODO: This must be updated later
     const filteredData = posts.filter(post => {
       const { title, content, categories } = post.node
       return (

@@ -5,10 +5,11 @@ $title-line-height: 0.8;
 $family-sans-serif: "Jaldi", sans-serif;
 
 @import "~bulma/bulma.sass";
+@import "~bulma-tooltip";
 @import "navbar";
 @import "landing";
 @import "benefit-cards";
-@import "service-cards";
+@import "skill-cards";
 @import "description";
 @import "portfolio";
 @import "contact";
@@ -20,10 +21,23 @@ $family-sans-serif: "Jaldi", sans-serif;
 
 html {
   font-size: 18px;
+  background: #fafafa;
 }
 
 .container {
-  margin-top: 6rem;
+  margin-top: 3rem;
+}
+
+.container-less-margin {
+  margin: 3.2rem 0;
+
+  p {
+    margin: 1rem 0;
+  }
+}
+
+.main {
+  background: #fafafa;
 }
 
 blockquote {
@@ -48,8 +62,8 @@ blockquote p {
 h1 {
   display: block;
   font-size: 2em;
-  margin-top: 0.67em;
-  margin-bottom: 0.67em;
+  // margin-top: 0.67em;
+  // margin-bottom: 0.67em;
   margin-left: 0;
   margin-right: 0;
   font-weight: bold;
@@ -98,6 +112,10 @@ h5 {
   font-weight: bold;
 }
 
+.centered-title-h2 {
+  text-align: center;
+}
+
 h6 {
   display: block;
   font-size: 0.67em;
@@ -128,4 +146,12 @@ h6 {
     height: 40;
     width: 40;
   }
+}
+
+.nav-anchor {
+  height: 10px;
+}
+
+#skills {
+  margin-top: 0rem;
 }

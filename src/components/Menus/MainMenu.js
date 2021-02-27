@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { Link } from "gatsby"
 
 import lightLogo from "../../images/light-logo.png"
 import darkLogo from "../../images/dark-logo.png"
@@ -30,20 +30,7 @@ const MainMenu = () => {
 
   const [isToggled, setToggle] = useState(false)
 
-  const { allWordpressWpApiMenusMenusItems } = useStaticQuery(graphql`
-    {
-      allWordpressWpApiMenusMenusItems {
-        edges {
-          node {
-            items {
-              object_slug
-              title
-            }
-          }
-        }
-      }
-    }
-  `)
+  const menuItems = ["About", "Skills", "Work", "Blog"]
 
   return (
     <>
@@ -81,13 +68,11 @@ const MainMenu = () => {
               animate={{ y: 0 }}
               exit={{ y: -500 }}
             >
-              {allWordpressWpApiMenusMenusItems.edges[0].node.items.map(
-                navItem => (
-                  <Link className="navbar-item" to={"/" + navItem.object_slug}>
-                    {navItem.title}
-                  </Link>
-                )
-              )}
+              {menuItems.map(item => (
+                <Link className="navbar-item" to={"/" + item}>
+                  {item}
+                </Link>
+              ))}
               <Search></Search>
             </motion.div>
           )}
@@ -96,16 +81,22 @@ const MainMenu = () => {
           <div className="navbar-item no-hover">
             <Search></Search>
           </div>
-          {allWordpressWpApiMenusMenusItems.edges[0].node.items.map(navItem => (
+          {menuItems.map(item => (
             <Link
               className={
-                path === "/" || path === "/success"
-                  ? "navbar-item item-white"
-                  : "navbar-item"
+                path.includes("/projects/") ||
+                path.includes("/posts/") ||
+                path.includes("/blog")
+                  ? "navbar-item"
+                  : "navbar-item item-white"
               }
-              to={"/" + navItem.object_slug}
+              to={
+                item === "Blog"
+                  ? "/blog"
+                  : "/#" + item.charAt(0).toLowerCase() + item.slice(1)
+              }
             >
-              {navItem.title}
+              {item}
             </Link>
           ))}
         </div>

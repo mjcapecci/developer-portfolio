@@ -2,17 +2,18 @@
   text-align: center;
 }
 
-@media only screen and (max-width: 1406px) {
-  .social-template {
-    margin: 0 2rem;
-  }
+.social-template {
+  margin-top: 1.3rem;
 
-  .page-content {
-    p {
-      margin: 0 2rem;
-    }
-    svg {
-      margin: 0 2rem;
+  .last-icon {
+    margin-left: -0.3rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact-social-icons {
+    a:last-child {
+      display: none;
     }
   }
 }

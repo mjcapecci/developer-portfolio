@@ -1,6 +1,6 @@
 .under-hero {
   height: 75vh;
-  h1 {
+  h2 {
     margin-left: 1rem;
   }
   .learnMore {
@@ -21,7 +21,7 @@
     .benefit-card {
       position: relative;
       color: white;
-      height: 12rem;
+      height: 14rem;
       margin: 1rem;
       cursor: pointer;
       .the-card {
@@ -46,8 +46,21 @@
 
           &:hover {
             background: #111;
-            transform: translateY(2px);
           }
+        }
+
+        .work-tech-stack-title {
+          margin: 0;
+          text-align: center;
+        }
+
+        .work-tech-stack {
+          margin-top: 1rem;
+          padding: 0.2rem 0.6rem;
+          border-radius: 20px;
+          font-size: 14px;
+          background: #fcfcfc;
+          color: #333;
         }
 
         .the-card-back {
@@ -89,8 +102,21 @@
 
           &:hover {
             background: #111;
-            transform: translateY(2px);
           }
+        }
+
+        .work-tech-stack-title {
+          margin: 0;
+          text-align: center;
+        }
+
+        .work-tech-stack {
+          margin-top: 1rem;
+          padding: 0.2rem 0.6rem;
+          border-radius: 20px;
+          font-size: 14px;
+          background: #fcfcfc;
+          color: #333;
         }
 
         .the-card-back {
