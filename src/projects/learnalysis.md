@@ -1,7 +1,7 @@
 ---
 slug: "/projects/learnalysis"
 title: "Learnalysis"
-liveLink: "https://learnalysis.com"
+liveLink: "https://www.learnalysis.com"
 sourceLink: "https://github.com/mjcapecci/learnalysis"
 position: 5
 ---

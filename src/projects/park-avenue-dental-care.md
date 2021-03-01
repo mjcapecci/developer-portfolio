@@ -1,7 +1,7 @@
 ---
 slug: "/projects/park-avenue-dental-care"
 title: "Park Avenue Dental Care"
-liveLink: "https://parkavedentalcare.com"
+liveLink: "https://www.parkavedentalcare.com"
 sourceLink: ""
 position: 4
 ---
