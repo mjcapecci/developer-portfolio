@@ -12,13 +12,16 @@ const Footer = () => {
           <p>©{new Date().getFullYear()} by Michael Capecci</p>
         </div>
         <div>
-          <p>michael@michaelcapecci.com</p>
+          <a href="mailto:michael@michaelcapecci.com">
+            michael@michaelcapecci.com
+          </a>
         </div>
         <div className="bottom-nav">
-          <Link to="/services">Services</Link>
-          <Link to="/work">Work</Link>
-          <Link to="/contact">Contact</Link>
-          <Link to="/blog">Blog</Link>
+          <p className="underline">Menu</p>
+          <Link to="/">Home</Link>
+          <Link to="/#about">About</Link>
+          <Link to="/#skills">Skills</Link>
+          <Link to="/#work">Work</Link>
         </div>
       </footer>
     </>

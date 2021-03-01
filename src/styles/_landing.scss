@@ -47,6 +47,10 @@
   transform: translateY(28px);
 }
 
+.project-button-controls {
+  margin-top: 2rem;
+}
+
 .project-buttons {
   margin-top: 1rem;
   a {
@@ -55,6 +59,12 @@
     &:hover {
       color: #15bf98;
     }
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .project-button-controls {
+    margin-bottom: 2rem;
   }
 }
 

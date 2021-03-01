@@ -6,7 +6,7 @@
   justify-content: center;
 
   .blog-post {
-    width: 100%;
+    width: auto;
     font-size: 24px;
     display: flex;
     flex-direction: column;
@@ -17,8 +17,14 @@
     h1 {
       text-align: center;
       font-size: 48px;
-      margin: 0rem 1rem 1rem 1rem;
-      text-decoration: underline;
+      margin: 3rem 1rem 1rem 1rem;
+      // text-decoration: underline;
+    }
+
+    h2,
+    h3 {
+      text-align: center;
+      margin: 1rem 1rem;
     }
 
     .byline {
@@ -36,17 +42,19 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 100%;
       padding-bottom: 2rem;
+      max-width: 100vw;
     }
 
     img {
       display: block;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: 0rem;
-      border: 2px solid #333;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+      border: 2px solid rgb(95, 95, 95);
       border-radius: 7px;
+      background: none;
     }
 
     figcaption {
@@ -57,15 +65,14 @@
     }
 
     p {
-      width: auto;
-      width: auto;
-      display: flex;
-      justify-content: center;
+      width: 100%;
+      margin: 1rem 0;
+      text-align: left;
       padding: 0 10rem;
     }
 
     .finale {
-      margin: 3rem 2rem;
+      margin: 3rem 2rem -3rem 2rem;
       padding: 2rem;
       border-radius: 5px;
       border: 2px solid #e84c3c;
@@ -82,23 +89,18 @@
   }
 }
 
+.gatsby-highlight {
+  width: auto;
+  font-size: 16px;
+  margin: 1.5rem 0;
+}
+
 .code-container {
   overflow-x: hidden;
   width: 100% !important;
-
-  .code-toolbar {
-    .toolbar {
-      .toolbar-item {
-        display: none !important;
-      }
-    }
-  }
-
-  pre {
-    position: static;
-    overflow-x: scroll !important;
-    font-size: 16.7px !important;
-  }
+  position: static;
+  overflow-x: scroll !important;
+  font-size: 16.7px !important;
 }
 
 .project-button {
@@ -123,22 +125,6 @@
   transition: all 0.1s ease;
 }
 
-@media only screen and (max-height: 900px) {
-  .post-container {
-    .blog-post {
-      .blog-post-markup {
-        margin: 0 2rem;
-      }
-      p {
-        width: 100%;
-      }
-      .finale {
-        width: 90%;
-      }
-    }
-  }
-}
-
 @media only screen and (max-width: 1070px) {
   .post-container {
     .blog-post {
@@ -151,7 +137,7 @@
       }
       .finale {
         padding: 0.5rem;
-        width: 90%;
+        width: 75%;
       }
     }
   }
@@ -167,17 +153,48 @@
   }
 }
 
-@media screen and (max-width: 600px) {
-  p {
-    width: auto;
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0;
+@media only screen and (max-height: 900px) {
+  .post-container {
+    .blog-post {
+      .blog-post-markup {
+        margin: 0 2rem;
+      }
+      p {
+        width: 100%;
+      }
+      .finale {
+        width: auto;
+      }
+    }
   }
 }
 
-// @media only screen and (max-width: 680px) {
-//   .code-container {
-//     width: 75%;
-//   }
-// }
+@media only screen and (max-width: 640px) {
+  .gatsby-highlight {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .post-container {
+    .blog-post {
+      font-size: 20px;
+
+      .blog-post-markup {
+        margin: 2rem 0rem;
+        width: auto;
+      }
+      p {
+        margin: 0rem;
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .gatsby-highlight {
+    width: 90%;
+    overflow: hidden;
+  }
+}

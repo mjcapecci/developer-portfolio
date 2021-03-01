@@ -7,6 +7,7 @@ import { AllHtmlEntities } from "html-entities"
 // import readingTime from "reading-time"
 
 const Post = ({ pageContext }) => {
+  console.log(pageContext)
   useEffect(() => {
     Prism.plugins.customClass.map({
       number: "prism-number",
@@ -34,7 +35,10 @@ const Post = ({ pageContext }) => {
             />
             <div className="finale">
               Questions, comments, or concerns? I'd love to hear about them.
-              Please email me at michael@michaelcapecci.com
+              Please email me at{" "}
+              <a href="mailto:michael@michaelcapecci.com">
+                michael@michaelcapecci.com
+              </a>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@
       {
         "languages": ["javascript", "css", "markup"],
         "plugins": ["show-language", "custom-class"],
-        "theme": "okaidia",
+        "theme": "default",
         "css": true
       }
     ]

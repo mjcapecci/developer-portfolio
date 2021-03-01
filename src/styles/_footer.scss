@@ -2,6 +2,16 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #01d1b2 !important;
+  color: white;
+  font-weight: bolder;
+
+  a {
+    color: white;
+    &:hover {
+      color: rgb(218, 218, 218);
+    }
+  }
 
   & > * {
     margin: 0 10rem;
@@ -17,6 +27,7 @@ footer {
 
 .above-footer {
   padding-top: 3rem;
+  margin-bottom: 6rem;
 }
 
 // Above footer contact form
@@ -30,7 +41,7 @@ footer {
 }
 
 .full-height {
-  margin-top: 8.5rem;
+  margin-top: 6.5rem;
 }
 
 @media only screen and (max-width: 1600px) {

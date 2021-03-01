@@ -34,6 +34,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         edges {
           node {
             id
+            html
             frontmatter {
               slug
               title
@@ -74,7 +75,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         id: node.id,
         title: node.frontmatter.title,
-        content: node.content,
+        content: node.html,
       },
     })
   })
