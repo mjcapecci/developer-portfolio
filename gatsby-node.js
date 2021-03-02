@@ -37,7 +37,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             html
             frontmatter {
               slug
+              date
               title
+              summary
+              banner {
+                childImageSharp {
+                  fluid(fit: COVER, quality: 70) {
+                    src
+                  }
+                }
+              }
             }
           }
         }
@@ -75,6 +84,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         id: node.id,
         title: node.frontmatter.title,
+        date: node.frontmatter.date,
+        summary: node.frontmatter.summary,
+        banner: node.frontmatter.banner,
         content: node.html,
       },
     })
