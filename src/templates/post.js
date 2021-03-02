@@ -4,7 +4,6 @@ import SEO from "../components/Default/seo"
 
 import Prism from "prismjs"
 import { AllHtmlEntities } from "html-entities"
-// import readingTime from "reading-time"
 
 const Post = ({ pageContext }) => {
   console.log(pageContext)
@@ -26,9 +25,9 @@ const Post = ({ pageContext }) => {
               dangerouslySetInnerHTML={{ __html: pageContext.title }}
             ></h1>
             <small className="byline">By: Michael Capecci</small>
-            {/* <small className="byline byline-under">
-              {readingTime(pageContext.content).text}
-            </small> */}
+            <small className="byline byline-under">
+              {pageContext.timeToRead}-minute read
+            </small>
             <div
               dangerouslySetInnerHTML={{ __html: pageContext.content }}
               className="blog-post-markup"

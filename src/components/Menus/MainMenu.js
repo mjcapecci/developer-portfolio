@@ -69,18 +69,23 @@ const MainMenu = () => {
               exit={{ y: -500 }}
             >
               {menuItems.map(item => (
-                <Link className="navbar-item" to={"/" + item}>
+                <Link
+                  className="navbar-item"
+                  to={
+                    item === "Blog"
+                      ? "/blog"
+                      : "/#" + item.charAt(0).toLowerCase() + item.slice(1)
+                  }
+                >
                   {item}
                 </Link>
               ))}
-              <Search></Search>
+              {/* <Search></Search> */}
             </motion.div>
           )}
         </AnimatePresence>
         <div className={"navbar-end"}>
-          <div className="navbar-item no-hover">
-            <Search></Search>
-          </div>
+          <div className="navbar-item no-hover">{/* <Search></Search> */}</div>
           {menuItems.map(item => (
             <Link
               className={

@@ -10,7 +10,6 @@ Recently, I was writing a CRUD application that kept track of a “start time”
 
 ![Man with watch working on a laptop](./1a.jpg)
 
-
 ## Date and Time Gotchas
 
 The hardest part of dealing with time data is the likelihood that an edge case is going to throw your application for a loop. Things like localization, 24-hour vs 12-hour time, and other topics present interesting challenges.
@@ -22,53 +21,53 @@ The following micro-project is intended to put on display some of the helpful th
 ## Setting Up the Project
 
 This is a very basic project, and there is only minimal CSS that I won't include here. The HTML sets up a basic calculator outline with two datetime-local inputs.
+
 ```markup
- <body>
-    <h1>Timestamp Calculator</h1>
-    <div class="container">
-      <form>
-        <label for="start">Start (date and time):</label>
-        <input type="datetime-local" id="start" name="start" />
-      </form>
-      <p>→</p>
-      <form>
-        <label for="start">End (date and time):</label>
-        <input type="datetime-local" id="end" name="end" />
-      </form>
-    </div>
-    <button id="calculate">Calculate</button>
-    <div class="result-container">
-      <h3>Hours:</h3>
-      <h3 class="result" id="result"></h3>
-    </div>
-  </body>
+<body>
+  <h1>Timestamp Calculator</h1>
+  <div class="container">
+    <form>
+      <label for="start">Start (date and time):</label>
+      <input type="datetime-local" id="start" name="start" />
+    </form>
+    <p>→</p>
+    <form>
+      <label for="start">End (date and time):</label>
+      <input type="datetime-local" id="end" name="end" />
+    </form>
+  </div>
+  <button id="calculate">Calculate</button>
+  <div class="result-container">
+    <h3>Hours:</h3>
+    <h3 class="result" id="result"></h3>
+  </div>
+</body>
 ```
 
 The JavaScript is as follows:
 
 ```javascript
+const startInput = document.getElementById("start")
+const endInput = document.getElementById("end")
+const calculateButton = document.getElementById("calculate")
+const result = document.getElementById("result")
 
-const startInput = document.getElementById('start');
-const endInput = document.getElementById('end');
-const calculateButton = document.getElementById('calculate');
-const result = document.getElementById('result');
-
-calculateButton.addEventListener('click', () => {
-  const startTime = new Date(startInput.value).getTime();
-  const endTime = new Date(endInput.value).getTime();
+calculateButton.addEventListener("click", () => {
+  const startTime = new Date(startInput.value).getTime()
+  const endTime = new Date(endInput.value).getTime()
 
   if (isNaN(startTime) || isNaN(endTime)) {
-    alert('Please make sure to select a start and end time.');
-    return;
+    alert("Please make sure to select a start and end time.")
+    return
   }
 
   if (startTime > endTime) {
-    alert('Please make sure end time is a later value than start time.');
-    return;
+    alert("Please make sure end time is a later value than start time.")
+    return
   }
 
-  result.innerText = `${((endTime - startTime) / 3600000).toFixed(2)}`;
-});
+  result.innerText = `${((endTime - startTime) / 3600000).toFixed(2)}`
+})
 ```
 
 The project looks like this so far:
@@ -99,7 +98,7 @@ We have created a variable that corresponds with the values of each of the input
 
 This timestamp is highly malleable and will bypass many of the gotchas regarding the handling of time data. This number is referred to as either Unix time or Epoch time, and in JavaScript, it represents the number of milliseconds that have passed since the beginning of 1970.
 
-The reason this is awesome is that dealing with time data in the format of a string, object, or other data type is going to present significant challenges when the edge cases of your application start cropping up. If your application is configured from the ground up to accept time data __exclusively__ in Unix format, you can easily manipulate your Unix data as necessary to display useful information to the user. We will do this in the next step.
+The reason this is awesome is that dealing with time data in the format of a string, object, or other data type is going to present significant challenges when the edge cases of your application start cropping up. If your application is configured from the ground up to accept time data **exclusively** in Unix format, you can easily manipulate your Unix data as necessary to display useful information to the user. We will do this in the next step.
 
 ### 3. Manipulate Unix Timestamp for the Front End
 
@@ -110,7 +109,6 @@ This comes down to a basic calculation of subtracting the Unix value of the end 
 After this calculation is complete, we update the value of our “result” element to display the number of hours that have passed on the front end.
 
 ![Finished time calculator](./1d.png)
-
 
 <figcaption>The working calculator with an example value</figcaption>
 

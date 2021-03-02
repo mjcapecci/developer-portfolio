@@ -35,6 +35,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             id
             html
+            timeToRead
             frontmatter {
               slug
               date
@@ -86,6 +87,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         title: node.frontmatter.title,
         date: node.frontmatter.date,
         summary: node.frontmatter.summary,
+        timeToRead: node.timeToRead,
         banner: node.frontmatter.banner,
         content: node.html,
       },
