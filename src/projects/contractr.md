@@ -1,7 +1,7 @@
 ---
 slug: "/projects/contractr"
 title: "Contractr.io"
-liveLink: "https://www.contractr.io"
+liveLink: "https://contractr-io.herokuapp.com/"
 sourceLink: "https://github.com/mjcapecci/Contractr.io"
 position: 3
 ---
