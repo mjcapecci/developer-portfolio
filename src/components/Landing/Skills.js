@@ -42,7 +42,13 @@ const Skills = () => {
     },
     {
       title: "Back End",
-      items: ["Node.js", "Express", "PHP", "SQL (MySQL)", "MongoDB | Mongoose"],
+      items: [
+        "Node.js | Express",
+        "C# / ASP.NET Core",
+        "PHP",
+        "MySQL | PostgreSQL",
+        "MongoDB | Mongoose",
+      ],
       icon: faCogs,
     },
     {
@@ -63,7 +69,7 @@ const Skills = () => {
         "Gatsby | Next.js",
         "WordPress | Shopify",
         "React Native",
-        "iOS | Swift",
+        "Unity",
       ],
       icon: faBoxes,
     },

@@ -33,7 +33,7 @@ const AboveFooterContact = () => {
               id="name"
               type="text"
               required
-              placeholder="Ex: John Smith"
+              placeholder="Name"
             />
           </div>
           <div className="control column">
@@ -44,7 +44,7 @@ const AboveFooterContact = () => {
               id="email"
               type="email"
               required
-              placeholder="Ex: jsmith@gmail.com"
+              placeholder="Email"
             />
           </div>
           <div className="control column">
@@ -54,7 +54,7 @@ const AboveFooterContact = () => {
               id="phone"
               className="input is-primary"
               type="phone"
-              placeholder="Ex: (800) 123-4567 (optional)"
+              placeholder="Phone # (optional)"
             />
           </div>
         </div>
@@ -65,6 +65,7 @@ const AboveFooterContact = () => {
             name="message"
             id="message"
             className="textarea has-fixed-size is-primary"
+            placeholder="Message"
           ></textarea>
           <p className="control submit-button">
             <button
