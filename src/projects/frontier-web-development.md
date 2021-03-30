@@ -1,7 +1,7 @@
 ---
 slug: "/projects/frontier-web-development"
 title: "Frontier Web Development"
-liveLink: "https://www.frontierdevs.com"
+liveLink: "https://frontierdevs.com"
 sourceLink: ""
 position: 3
 ---
