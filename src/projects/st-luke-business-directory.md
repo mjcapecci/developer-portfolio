@@ -1,7 +1,7 @@
 ---
 slug: "/projects/st-luke-business-directory"
 title: "St. Luke Business Directory"
-liveLink: "https://www.st-luke-test.herokuapp.com/"
+liveLink: "https://st-luke-test.herokuapp.com/"
 sourceLink: ""
 position: 2
 ---
