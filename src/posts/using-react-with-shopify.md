@@ -1,0 +1,144 @@
+---
+slug: "/posts/using-react-with-shopify"
+title: "Using React In A Shopify Theme"
+date: "April 10th 2021"
+banner: "2.jpg"
+summary: "A brief look at implementing your first React component in a Shopify theme. Also, take a look at building dynamic Shopify sections that are powered by React."
+---
+
+Using React in a Shopify theme is a straightforward process. However, it may look a little bit different than what you're used to if you've only used Create React App, Next.js, or another build environment that comes with a premade Webpack config.
+
+## 1. Import the Most Recent React CDN Links
+
+If you've worked with Shopfiy themes before, you know about the stringent requirements of your theme folder structure. All JavaScript, CSS, and image files must be present in the general <code>/assets</code> folder. Also, no nested folders are allowed within that folder.
+
+Thus, for simplicity's sake, we will import React and ReactDOM via links to the CDN. Implement these two scripts directly above the closing body tag in your <code>theme.liquid</code> file.
+
+```liquid
+<body>
+
+  // ... the rest of your body content
+
+  <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+
+</body>
+```
+
+## 2. Install and Configure Babel
+
+If you haven't done so already, create a <code>package.json</code> file with <code>npm init -y</code>
+
+Then, install Babel and the following Babel presets with <code>npm install babel-cli babel-preset-react-app babel-preset-minify</code>.
+
+Because we are not using Create React App or another tool that handles our bundling and transpiling, we are setting up an extremely lightweight babel configuration that will do so for us.
+
+Next, create a <code>.babelrc</code> file in your root directory and use the following config:
+
+```json
+{
+  "presets": ["minify"]
+}
+```
+
+This will assure that all code is minified during the transpilation process. Also, this will allow us to use .JSX that transpiles into readable JavaScript.
+
+## 3. Add a .Src Folder and Build Script
+
+Typically, you might see Babel feeding into a <code>/dist</code> folder or something similar. Because of our theme's requirement of containing all our JavaScript code in the <code>/assets</code> folder, we are going to compile directly into that folder.
+
+Add the following script to your <code>package.json</code> file:
+
+```json
+// ... other scripts
+
+"babelwatch": "npx babel --watch src --out-dir ./assets --presets react-app/prod"
+```
+
+Running this command will start a watch initiative in your <code>.src</code> folder. Whenever you update and save a file, that file will automatically be compiled and saved into your asset folder.
+
+## 4. Create a Component in the .Src Folder
+
+Since you are relying on React and ReactDOM from their CDN links, you cannot <code>import React from 'react'</code> as you normally might.
+
+Instead, a sample component might look as follows ([example is inspired by the React Docs](https://reactjs.org/docs/add-react-to-a-website.html)):
+
+```javascript
+const domContainer = document.querySelector("#like-button")
+
+const LikeButton = props => {
+  const [liked, setLiked] = React.useState(false)
+
+  return <button onClick={() => setLiked(true)}>Like</button>
+}
+
+ReactDOM.render(<LikeButton />, domContainer)
+```
+
+In this example, the goal is to inject our Like Button component into a div that exists in the DOM with the id "like-button". Since our goal so far has been to render a single component, we will have to place that div manually somewhere inside our Shopify theme.
+
+With the <code>babelwatch</code> command running, when you save this component the file will be transpiled by Babel and placed directly into your theme's <code>/assets</code> folder. Now, it's ready to be imported into your <code>theme.liquid</code> file. React components will be imported **below** the links to the React CDN.
+
+```liquid
+<body>
+
+  // ... the rest of your body content
+
+  <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+
+  <script src="{{ 'LikeButton.js' | asset_url }}"></script>
+
+</body>
+```
+
+At this point, you can add a div anywhere in your theme with id "like-button", and your component will be rendered. This is useful for adding some React to key places in an existing theme, or implementing React for the purposes of building a Shopify app. However, it's not very scalable if you should wish to re-use the component in multiple parts of your theme (ie: in various sections, snippets, or even templates).
+
+Luckily, there is a way to make things more reusable in a way that aligns with Shopify's dynamic section format.
+
+## 5. Creating Dynamic Sections with React (Optional)
+
+In this next step, we'll make it possible to create instances of our React components from within the Shopify admin panel. This gives us the ability to make components that serve as mini-plugins for store owners who require specific functionality that may not be included in their theme.
+
+The first part that will look different in this format is the way we are selecting DOM elements to target for rendering our React. By default, React is designed to target a single DOM element, and to render a single component inside that element (ie: rendering a top level <code>App</code> component inside of a <code>root</code> tag.)
+
+Instead, we are going to select all elements with a particular class name, and loop through the selected elements while rendering our component into each one.
+
+```javascript
+const domAll = document.querySelectorAll(".like-button")
+
+const LikeButton = ({ element }) => {
+  const [liked, setLiked] = React.useState(false)
+
+  return <button onClick={() => setLiked(true)}>Like</button>
+}
+
+;[...domAll].forEach(node =>
+  ReactDOM.render(<LikeButton element={node} />, node)
+)
+```
+
+The key differences here are that:
+
+- For semantic purposes, we switched to using <code>querySelectorAll</code> and searching for all **classes** named "like-button" instead of a single id.
+- We are looping through all the selected classes and rendering our component into each one.
+
+As we render components into each corresponding DOM class in our loop, you'll notice that we are passing in a <code>prop</code> called "element", and that the prop is simply the <code>node</code> that exists at the current index of our loop. This practice allows us to pass into each individual components any of the data that may be associated with each DOM element (ie: data attributes, etc.)
+
+Finally, in your <code>/sections</code> folder, you can simply create a new Liquid section called <code>like-button.liquid</code>. Dynamic sections also require a "preset" schema, and the example below is a basic template.
+
+```liquid
+<div class="like-button"></div>
+
+{% schema %}
+{
+	"name": "Like Button",
+	"presets": [{
+		"category": "React Components",
+		"name": "Like Button"
+	}]
+}
+{% endschema %}
+```
+
+Now, in the Shopify admin panel, merchants will have the ability to add this section to any part of their theme. For the time being, however, sections that rely on JavaScript (such as any section that will be created in the fashion described throughout this article) will not automatically update in the "customization preview" offered in the Shopify admin panel. It may be required to reload the page or save changes to see any changes that are made on these components.

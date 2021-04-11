@@ -1,14 +1,14 @@
 ---
 slug: "/posts/working-with-time-data-in-javascript"
-title: "Working with Time Data in JavaScript"
+title: "Working With Time Data In JavaScript"
 date: "July 22nd 2020"
 banner: "1.png"
 summary: "A brief analysis of an effective practice I used while working with time data in a recent JavaScript project."
 ---
 
-Recently, I was writing a CRUD application that kept track of a “start time” and “end time” for entries that were created and stored in a database. I could subtract these time values to find a simple “length of time” for each entry. But retrieving the time data in a useful format was a bit more difficult than I expected.
-
 ![Man with watch working on a laptop](./1a.jpg)
+
+Recently, I was writing a CRUD application that kept track of a “start time” and “end time” for entries that were created and stored in a database. I could subtract these time values to find a simple “length of time” for each entry. But retrieving the time data in a useful format was a bit more difficult than I expected.
 
 ## Date and Time Gotchas
 

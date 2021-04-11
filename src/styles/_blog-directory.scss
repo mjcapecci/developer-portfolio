@@ -1,9 +1,27 @@
 .directory {
-  min-height: 75.2vh;
+  min-height: 65.2vh;
   margin: 8rem 2rem;
+
+  .card {
+    background: linear-gradient(
+        rgba(51, 51, 51, 0.973),
+        rgba(51, 51, 51, 0.973)
+      ),
+      url("../images/seamless-pattern-2.svg") !important;
+    color: white;
+
+    a {
+      color: #01d1b2;
+
+      &:hover {
+        color: #02ac92;
+      }
+    }
+  }
 
   h3 {
     line-height: 2.7rem;
+    color: white;
   }
   .blog-post-header {
     padding: 1rem;
@@ -11,10 +29,11 @@
     .tags {
       margin-bottom: 1rem;
       .publish-date {
-        background: #333;
+        background: #02aa91;
         padding: 0rem 0.2rem;
         border-radius: 5px;
         color: white;
+        font-weight: bolder;
         margin-right: 0.2rem;
       }
 

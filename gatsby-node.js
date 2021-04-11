@@ -30,6 +30,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     {
       allMarkdownRemark(
         filter: { frontmatter: { slug: { regex: "/posts/" } } }
+        sort: { fields: frontmatter___date, order: ASC }
       ) {
         edges {
           node {

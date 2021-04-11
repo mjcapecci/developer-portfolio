@@ -32,13 +32,6 @@ const Post = ({ pageContext }) => {
               dangerouslySetInnerHTML={{ __html: pageContext.content }}
               className="blog-post-markup"
             />
-            <div className="finale">
-              Questions, comments, or concerns? I'd love to hear about them.
-              Please email me at{" "}
-              <a href="mailto:michael@michaelcapecci.com">
-                michael@michaelcapecci.com
-              </a>
-            </div>
           </div>
         </div>
       </div>

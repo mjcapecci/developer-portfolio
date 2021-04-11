@@ -10,25 +10,11 @@ const BlogDirectory = ({ pageContext }) => {
       <SEO title="Blog" />
       <div className="container">
         <div className="directory">
-          <strong>New Articles Coming Soon!</strong>
           {pageContext.posts.map((post, i) => {
-            console.log(post)
             return (
               <div className="card blog-post-header" key={i}>
                 <div className="post-banner-container">
                   <Link to={post.node.frontmatter.slug}>
-                    <img
-                      src={
-                        post?.node?.frontmatter.banner
-                          ? post.node.frontmatter.banner.childImageSharp.fluid
-                              .src
-                          : ""
-                      }
-                      alt={post.node.frontmatter.title}
-                      width={"100%"}
-                    ></img>
-                  </Link>
-                  <Link to={"/post?/" + post.node.frontmatter.slug}>
                     <h3
                       dangerouslySetInnerHTML={{
                         __html: post.node.frontmatter.title,
@@ -45,12 +31,14 @@ const BlogDirectory = ({ pageContext }) => {
                     ></small>
                   </div>
                 </div>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: post.node.frontmatter.summary,
-                  }}
-                ></p>
-                <Link to={post.node.frontmatter.slug}>Read More</Link>
+                <div className="solid-card-details">
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: post.node.frontmatter.summary,
+                    }}
+                  ></p>
+                  <Link to={post.node.frontmatter.slug}>Read More</Link>
+                </div>
               </div>
             )
           })}

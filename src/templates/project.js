@@ -7,7 +7,7 @@ const Project = ({ pageContext }) => {
   return (
     <Layout>
       <SEO title={AllHtmlEntities.decode(pageContext.title)} />
-      <div className="container-less-margin">
+      <div className="container">
         <div className="post-container">
           <div className="blog-post">
             <h1
@@ -44,13 +44,6 @@ const Project = ({ pageContext }) => {
               dangerouslySetInnerHTML={{ __html: pageContext.html }}
               className="blog-post-markup"
             />
-            <div className="finale">
-              Questions, comments, or concerns? I'd love to hear about them.
-              Please email me at{" "}
-              <a href="mailto:michael@michaelcapecci.com">
-                michael@michaelcapecci.com
-              </a>
-            </div>
           </div>
         </div>
       </div>

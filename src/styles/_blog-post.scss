@@ -45,9 +45,22 @@
       padding-bottom: 2rem;
       padding-top: 1rem;
       max-width: 100vw;
-      background: rgb(245, 245, 245);
-      border: 2px solid rgb(236, 236, 236);
-      border-radius: 7px;
+
+      h2 {
+        margin: 2rem 0;
+        background: linear-gradient(
+            rgba(51, 51, 51, 0.897),
+            rgba(51, 51, 51, 0.897)
+          ),
+          url("../images/seamless-pattern-2.svg") !important;
+        color: white;
+        width: 100%;
+      }
+    }
+
+    h3 {
+      width: 100%;
+      text-align: left;
     }
 
     img {
@@ -56,8 +69,7 @@
       margin-right: auto;
       margin-bottom: 1rem;
       margin-top: 2rem;
-      border: 2px solid rgb(95, 95, 95);
-      border-radius: 7px;
+      border: 1px solid rgba(51, 51, 51, 0.479);
       background: none;
     }
 
@@ -68,7 +80,8 @@
       margin-bottom: 3rem;
     }
 
-    p {
+    p,
+    h3 {
       width: 100%;
       margin: 1rem 0;
       text-align: left;
@@ -89,9 +102,8 @@
       margin: 3rem 2rem -3rem 2rem;
       padding: 2rem;
       border-radius: 5px;
-      border: 2px solid #e84c3c;
       background: none;
-      color: #222232;
+      color: #4a4a4a;
       a {
         display: inline;
       }
@@ -140,7 +152,8 @@
       .blog-post-markup {
         margin: 0 2rem;
       }
-      p {
+      p,
+      h3 {
         width: 100%;
         padding: 0 2rem;
       }
@@ -172,7 +185,8 @@
       .blog-post-markup {
         margin: 0 2rem;
       }
-      p {
+      p,
+      h3 {
         width: 100%;
       }
       .finale {
@@ -197,7 +211,8 @@
         margin: 2rem 0rem;
         width: auto;
       }
-      p {
+      p,
+      h3 {
         margin: 0rem;
         padding: 1rem;
       }

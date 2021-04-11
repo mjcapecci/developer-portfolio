@@ -2,7 +2,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #01d1b2 !important;
+  background: linear-gradient(rgba(51, 51, 51, 0.897), rgba(51, 51, 51, 0.897)),
+    url("../images/seamless-pattern-2.svg") !important;
   color: white;
   font-weight: bolder;
 
