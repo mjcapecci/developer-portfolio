@@ -4,6 +4,7 @@ import SEO from "../components/Default/seo"
 
 import Prism from "prismjs"
 import { AllHtmlEntities } from "html-entities"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const Post = ({ pageContext }) => {
   console.log(pageContext)
@@ -28,10 +29,9 @@ const Post = ({ pageContext }) => {
             <small className="byline byline-under">
               {pageContext.timeToRead}-minute read
             </small>
-            <div
-              dangerouslySetInnerHTML={{ __html: pageContext.content }}
-              className="blog-post-markup"
-            />
+            <MDXRenderer className="blog-post-markup">
+              {pageContext.content}
+            </MDXRenderer>
           </div>
         </div>
       </div>
